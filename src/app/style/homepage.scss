@@ -1,0 +1,23 @@
+.flow_gif {
+  width: 812px;
+  object-fit: fill;
+
+  @media screen and (max-width: 639px) {
+    margin-top: 20px !important;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .top_section_heading {
+    font-size: 28px !important;
+  }
+  .top_section_heading_2 {
+    font-size: 40px !important;
+  }
+}
+
+.slider_logo {
+  width: 187px;
+  height: 87px;
+  border-radius: 10px;
+}
