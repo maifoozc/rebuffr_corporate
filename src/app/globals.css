@@ -17,3 +17,16 @@ body {
   color: var(--foreground);
   font-family: GT America Trial, Arial, Helvetica, sans-serif;
 }
+
+.nav_large {
+  @media screen and (max-width: 768px) {
+    display: none;
+
+  }
+}
+
+.nav_small {
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+}

@@ -3,10 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Footer_image from "../assets/Footer_image.png";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
+import { IconButton, Menu, MenuItem } from "@mui/material";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/aboutus" },
   { label: "Products", href: "/products" },
   { label: "Ingenium EMS", href: "/ingenium-ems" },
   { label: "Contact Us", href: "/contact" },
@@ -14,6 +17,14 @@ const navItems = [
 
 const Header = () => {
   const pathname = usePathname();
+
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div
@@ -33,7 +44,7 @@ const Header = () => {
         className="header_image cursor-pointer"
       />
 
-      <nav className="flex gap-6 text-white font-medium">
+      <nav className="hidden md:flex gap-6 text-white font-medium">
         {navItems.map((item) => (
           <Link
             key={item.href}
@@ -56,6 +67,39 @@ const Header = () => {
           </Link>
         ))}
       </nav>
+
+      <div className="md:hidden">
+        <IconButton onClick={handleMenuOpen} sx={{ color: "white" }}>
+          <MenuIcon />
+        </IconButton>
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleMenuClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+        >
+          {navItems.map((item) => (
+            <MenuItem
+              key={item.href}
+              onClick={handleMenuClose}
+              sx={{
+                color:
+                  pathname === item.href ? "rgba(51, 196, 129, 1)" : "inherit",
+                fontWeight: pathname === item.href ? 600 : 400,
+              }}
+            >
+              <Link href={item.href}>{item.label}</Link>
+            </MenuItem>
+          ))}
+        </Menu>
+      </div>
     </div>
   );
 };
