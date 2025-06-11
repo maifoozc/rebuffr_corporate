@@ -1,5 +1,19 @@
 "use client";
-import { Box, Button, Card, CardContent, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Checkbox,
+  FormControl,
+  FormLabel,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  TextField,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 import flow from "./assets/flow.gif";
 import container from "./assets/container.png";
@@ -31,6 +45,7 @@ import shahu from "./assets/shahu.svg";
 import ssk from "./assets/ssk.svg";
 import sula from "./assets/sula.svg";
 import york from "./assets/york.svg";
+import double_inverted from "./assets/double_inverted.svg";
 
 import ev from "./assets/temp/ev.jpeg";
 import it_park from "./assets/temp/it_park.jpeg";
@@ -68,6 +83,12 @@ export default function Home() {
   ];
 
   const [selected, setSelected] = useState(sections[0]);
+
+  const [solutionType, setSolutionType] = useState("residential");
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setSolutionType(event.target.value as string);
+  };
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center">
@@ -964,6 +985,361 @@ export default function Home() {
             />
           </Marquee>
         </div>
+      </div>
+
+      {/* Client Testimonials */}
+      <div className="w-full flex flex-col justify-center items-center mt-10 md:mr-30 md:ml-30">
+        <Typography
+          sx={{
+            fontSize: "48px",
+            lineHeight: "70px",
+            fontWeight: "900",
+            textAlign: "center",
+          }}
+        >
+          CLIENT <span style={{ color: "#33C481" }}>TESTIMONIALS</span>
+        </Typography>
+
+        <div className="flex flex-col md:flex-row justify-center items-center mt-10 gap-x-10 gap-y-10">
+          <Box
+            sx={{
+              width: "100%",
+              minHeight: "400px",
+              backgroundColor: "#33C481",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "180px",
+              padding: "60px",
+              marginTop: "40px",
+              position: "relative",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "20px",
+                lineHeight: "36px",
+                fontWeight: "400",
+                color: "#444444",
+                textAlign: "center",
+              }}
+            >
+              <span style={{ color: "#fff" }}>“Rebuffr’s</span> BESS gave us
+              complete energy reliability during peak hours. Their EMS insights
+              helped us save on diesel and optimize our solar generation.”
+            </Typography>
+            <Box
+              sx={{
+                width: "350px",
+                height: "132px",
+                backgroundColor: "#04836F",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "180px",
+                padding: "60px",
+                marginTop: "40px",
+                position: "absolute",
+                bottom: "-40px",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontSize: "20px",
+                  lineHeight: "36px",
+                  fontWeight: "700",
+                  color: "#ffffff",
+                  textAlign: "center",
+                }}
+              >
+                Operations Head
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  lineHeight: "36px",
+                  fontWeight: "500",
+                  color: "#ffffff",
+                  textAlign: "center",
+                }}
+              >
+                Auto Components Firm, Pune
+              </Typography>
+            </Box>
+
+            <Image
+              src={double_inverted.src}
+              alt="double_inverted"
+              width={100}
+              height={100}
+              style={{
+                width: "96px",
+                height: "74px",
+                position: "absolute",
+                top: "0px",
+                left: "0px",
+              }}
+            />
+          </Box>
+          <Box
+            sx={{
+              width: "100%",
+              height: "400px",
+              backgroundColor: "#33C481",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "180px",
+              padding: "60px",
+              marginTop: "40px",
+              position: "relative",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "20px",
+                lineHeight: "36px",
+                fontWeight: "400",
+                color: "#444444",
+                textAlign: "center",
+                marginBottom: "40px",
+              }}
+            >
+              “Their rural microgrid system lit up an entire village with zero
+              power cuts. Remarkable execution.”
+            </Typography>
+            <Box
+              sx={{
+                width: "350px",
+                height: "132px",
+                backgroundColor: "#04836F",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "180px",
+                padding: "60px",
+                marginTop: "40px",
+                position: "absolute",
+                bottom: "-40px",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontSize: "20px",
+                  lineHeight: "36px",
+                  fontWeight: "700",
+                  color: "#ffffff",
+                  textAlign: "center",
+                }}
+              >
+                Project Lead
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  lineHeight: "36px",
+                  fontWeight: "500",
+                  color: "#ffffff",
+                  textAlign: "center",
+                }}
+              >
+                NGO in Odisha
+              </Typography>
+            </Box>
+
+            <Image
+              src={double_inverted.src}
+              alt="double_inverted"
+              width={100}
+              height={100}
+              style={{
+                width: "96px",
+                height: "74px",
+                position: "absolute",
+                top: "0px",
+                left: "0px",
+              }}
+            />
+          </Box>
+        </div>
+      </div>
+
+      {/* Custom BESS Solution */}
+      <div className="w-full flex flex-col md:flex-row justify-center items-start mt-40 md:mr-30 md:ml-30">
+        <Box className="w-full md:w-1/2">
+          <Typography
+            sx={{
+              fontSize: "44px",
+              lineHeight: "70px",
+              fontWeight: "400",
+              color: "#33C481",
+            }}
+          >
+            Get Started with a
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "48px",
+              lineHeight: "70px",
+              fontWeight: "900",
+              color: "#222222",
+            }}
+          >
+            Custom BESS Solution
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "22px",
+              lineHeight: "34px",
+              fontWeight: "500",
+              color: "#444444",
+            }}
+          >
+            Let’s help you build a clean, resilient, and cost-effective energy
+            future.
+          </Typography>
+        </Box>
+        <Box className="w-full md:w-1/2">
+          <Grid container spacing={2}>
+            <Grid size={{ md: 6, sm: 12 }}>
+              <FormLabel
+                required
+                sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
+              >
+                NAME
+              </FormLabel>
+              <TextField
+                placeholder="Enter Name"
+                variant="outlined"
+                size="medium"
+                sx={{
+                  width: "100%",
+                  fontSize: "18px",
+                  lineHeight: "100%",
+                  fontWeight: "500",
+                }}
+              />
+            </Grid>
+            <Grid size={{ md: 6, sm: 12 }}>
+              <FormLabel
+                required
+                sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
+              >
+                EMAIL ID
+              </FormLabel>
+              <TextField
+                placeholder="Enter Email"
+                variant="outlined"
+                size="medium"
+                sx={{
+                  width: "100%",
+                  fontSize: "18px",
+                  lineHeight: "100%",
+                  fontWeight: "500",
+                }}
+              />
+            </Grid>
+            <Grid size={{ md: 6, sm: 12 }}>
+              <FormLabel
+                required
+                sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
+              >
+                PHONE NUMBER
+              </FormLabel>
+              <TextField
+                placeholder="Enter Phone Number"
+                variant="outlined"
+                size="medium"
+                sx={{
+                  width: "100%",
+                  fontSize: "18px",
+                  lineHeight: "100%",
+                  fontWeight: "500",
+                }}
+              />
+            </Grid>
+            <Grid size={{ md: 6, sm: 12 }}>
+              <FormControl fullWidth>
+                <FormLabel
+                  required
+                  sx={{
+                    fontSize: "18px",
+                    lineHeight: "100%",
+                    fontWeight: "500",
+                  }}
+                >
+                  Solution you are looking for
+                </FormLabel>
+                <InputLabel id="solution-type-label" required>
+                
+                </InputLabel>
+                <Select
+                  labelId="solution-type-label"
+                  id="demo-simple-select"
+                  value={solutionType}
+                  label="Solution"
+                  onChange={handleChange}
+                  sx={{
+                    width: "100%",
+                    fontSize: "18px",
+                    lineHeight: "100%",
+                    fontWeight: "500",
+                  }}
+                >
+                  <MenuItem value="residential">Residential</MenuItem>
+                  <MenuItem value="commercial">Commercial</MenuItem>
+                  <MenuItem value="industrial">Industrial</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid size={12}>
+              <FormLabel
+                required
+                sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
+              >
+                Leave a message for us
+              </FormLabel>
+              <TextField
+                placeholder="Type Your Message"
+                variant="outlined"
+                size="medium"
+                multiline
+                rows={4}
+                sx={{
+                  width: "100%",
+                  fontSize: "18px",
+                  lineHeight: "100%",
+                  fontWeight: "500",
+                }}
+              />
+            </Grid>
+            <Box className="w-full flex justify-start items-center">
+              <Checkbox />
+              <Typography>
+                I agree all the terms & Conditions & Privacy Policy
+              </Typography>
+            </Box>
+            <Button
+              sx={{
+                fontSize: "18px",
+                fontWeight: "700",
+                color: "#ffffff",
+                lineHeight: "20px",
+                backgroundColor: "#33C481",
+                padding: "18px 36px",
+                borderRadius: "30px",
+                cursor: "pointer",
+                width: "fit-content",
+              }}
+            >
+              Schedule a Consultation
+            </Button>
+          </Grid>
+        </Box>
       </div>
     </div>
   );
