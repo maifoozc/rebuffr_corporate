@@ -28,7 +28,6 @@ import battery_laptop from "./assets/battery_laptop.svg";
 import availibility_logo from "./assets/availibility_logo.svg";
 import type_logo from "./assets/type_logo.svg";
 import smart_logo from "./assets/smart_logo.svg";
-import isolate_container from "./assets/isolate_container.svg";
 import Grid from "@mui/material/Grid";
 import "./style/homepage.scss";
 import { useState } from "react";
@@ -53,6 +52,14 @@ import manufacturing from "./assets/temp/manufacturing.jpeg";
 import smart_city from "./assets/temp/smart_city.jpeg";
 import solar_epc from "./assets/temp/solar_epc.jpeg";
 import utility from "./assets/temp/utility.jpeg";
+
+import whychooseus_bg from "./assets/whychooseus_bg.svg";
+import whychooseus_container from "./assets/whychooseus_container.svg";
+import custom_bess from "./assets/custom_bess.svg";
+import endtoend from "./assets/endtoend.svg";
+import smartems from "./assets/smartems.svg";
+import indiafocused from "./assets/indiafocused.svg";
+import futureready from "./assets/futureready.svg";
 
 export default function Home() {
   const sections = [
@@ -90,6 +97,34 @@ export default function Home() {
     setSolutionType(event.target.value as string);
   };
 
+  const whychooseus = [
+    {
+      logo: custom_bess.src,
+      head: "Custom BESS Design",
+      description: "Tailored to your application, scale & budget",
+    },
+    {
+      logo: endtoend.src,
+      head: "End-to-End Delivery",
+      description:
+        "Design,integration,commissioning, and after-sales support",
+    },
+    {
+      logo: smartems.src,
+      head: "Smart EMS",
+      description: "Real-time analytics, predictive maintenance,remote access",
+    },
+    {
+      logo: indiafocused.src,
+      head: "India-Focused",
+      description: "Built for Indian conditions, powered by local expertise",
+    },
+    {
+      logo: futureready.src,
+      head: "Future-Ready",
+      description: "Scalable, tech-agnostic, and upgradable BESS platforms",
+    },
+  ];
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center">
       {/* Top Section */}
@@ -771,7 +806,15 @@ export default function Home() {
       </div>
 
       {/* Why choose rEbuffr */}
-      <div className="w-full flex flex-col justify-center items-center mt-10">
+      <div
+        className="w-full flex flex-col justify-center items-center mt-20"
+        style={{
+          backgroundImage: `url(${whychooseus_bg.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "start",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <Typography
           sx={{
             fontSize: "44px",
@@ -786,19 +829,73 @@ export default function Home() {
         </Typography>
 
         <Image
-          src={isolate_container.src}
+          src={whychooseus_container.src}
           alt="choose rebuffr"
           width={100}
           height={100}
           style={{
-            width: "1300px",
-            objectFit: "fill",
+            width: "712px",
+            // height: "500px",
+            objectFit: "contain",
+            marginTop: "20px",
           }}
         />
+
+        <Grid container spacing={2}>
+          {whychooseus.map((item, index) => (
+            <Grid size={{ sm: 12, md: 4 }} key={index}>
+              <Card>
+                <CardContent
+                  sx={{
+                    width: "100%",
+                    maxWidth: "400px",
+                    height: "130px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "start",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Image src={item.logo} alt="" width={70} height={70} />
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "start",
+                      alignItems: "start",
+                      marginLeft: "20px",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: "24px",
+                        lineHeight: "30px",
+                        fontWeight: "700",
+                        color: "#222222",
+                      }}
+                    >
+                      {item.head}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: "18px",
+                        lineHeight: "30px",
+                        fontWeight: "400",
+                        color: "#333333",
+                      }}
+                    >
+                      {item.description}
+                    </Typography>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </div>
 
       {/* Who We Work With */}
-      <div className="w-full flex flex-col justify-center items-center mt-10 ">
+      <div className="w-full flex flex-col justify-center items-center mt-20 ">
         <Typography
           sx={{
             fontSize: "48px",
@@ -1274,9 +1371,7 @@ export default function Home() {
                 >
                   Solution you are looking for
                 </FormLabel>
-                <InputLabel id="solution-type-label" required>
-                
-                </InputLabel>
+                <InputLabel id="solution-type-label" required></InputLabel>
                 <Select
                   labelId="solution-type-label"
                   id="demo-simple-select"

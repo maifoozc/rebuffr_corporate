@@ -9,7 +9,7 @@ import { IconButton, Menu, MenuItem } from "@mui/material";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/aboutus" },
+  { label: "About Us", href: "/about-us" },
   { label: "Products", href: "/products" },
   { label: "Ingenium EMS", href: "/ingenium-ems" },
   { label: "Contact Us", href: "/contact" },
