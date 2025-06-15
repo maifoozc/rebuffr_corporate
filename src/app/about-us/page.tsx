@@ -1,5 +1,14 @@
 "use client";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Checkbox,
+  Grid,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import aboutus_landing from "../assets/aboutus_landing.svg";
 import solar_farm from "../assets/solar_farm.svg";
 import commercial_industrial from "../assets/commercial_industrial.svg";
@@ -12,6 +21,18 @@ import rural_logo from "../assets/rural_logo.svg";
 import solar_logo from "../assets/solar_logo.svg";
 import commercial_logo from "../assets/commercial_logo.svg";
 import utility_logo from "../assets/utility_logo.svg";
+import thermal from "../assets/thermal.svg";
+import complaince from "../assets/complaince.svg";
+import customems from "../assets/customems.svg";
+import scalable from "../assets/scalable.svg";
+import fullstack from "../assets/fullstack.svg";
+import inhouse from "../assets/inhouse.svg";
+import ourclient from "../assets/ourclient.svg";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import XIcon from "@mui/icons-material/X";
+import vision from "../assets/vision.svg";
+import http from "../assets/http.svg";
+import building from "../assets/building.svg";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -33,6 +54,41 @@ const AboutUs = () => {
       setSelected(item);
     }
   };
+
+  const ourcapability = [
+    {
+      label: "In-house R&D and prototyping lab",
+      imagesrc: inhouse.src,
+      size: { md: 4, sm: 6, xs: 12 },
+    },
+    {
+      label: "Full-stack product engineering(hardware + software)",
+      imagesrc: fullstack.src,
+      size: { md: 4, sm: 6, xs: 12 },
+    },
+    {
+      label: "Scalable BESS design (from kWh to MWh)",
+      imagesrc: scalable.src,
+      size: { md: 4, sm: 6, xs: 12 },
+    },
+    {
+      label: "Custom EMS (Energy Management System) development",
+      imagesrc: customems.src,
+      size: { md: 6, sm: 6, xs: 12 },
+    },
+    {
+      label: "Compliance with BIS, CEA, and MNRE guidelines",
+      imagesrc: complaince.src,
+      size: { md: 6, sm: 6, xs: 12 },
+    },
+    {
+      label: "Advanced thermal management and climate-specific enclosures",
+      imagesrc: thermal.src,
+      size: { md: 6, sm: 6, xs: 12 },
+    },
+  ];
+
+  const [selectCapability, setSelectCapability] = useState(ourcapability[0]);
   return (
     <div className="w-full flex flex-col justify-center items-center">
       {/* Powering a Resilient Future  */}
@@ -170,7 +226,7 @@ const AboutUs = () => {
             fontSize: "48px",
             lineHeight: "70px",
             fontWeight: "900",
-            color: "#444444",
+            color: "#222222",
           }}
         >
           What we do
@@ -461,7 +517,517 @@ const AboutUs = () => {
           Our Capabilities
         </Typography>
 
-        <Box></Box>
+        <Box sx={{ position: "relative", marginTop: "20px" }}>
+          <Image
+            src={selectCapability.imagesrc}
+            width={100}
+            height={100}
+            alt={selectCapability.label}
+            style={{
+              width: "1200px",
+              height: "600px",
+              objectFit: "cover",
+              borderRadius: "30px",
+            }}
+          />
+
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "100%",
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              borderRadius: "0 0 30px 30px",
+              px: 2,
+              py: 3,
+            }}
+          >
+            <Grid
+              container
+              spacing={2}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {ourcapability.map((item, idx) => (
+                <Grid size={item.size} key={idx}>
+                  <Button
+                    variant={
+                      selected.label === item.label ? "contained" : "outlined"
+                    }
+                    onMouseEnter={() => setSelectCapability(item)}
+                    sx={{
+                      width: "100%",
+                      // minHeight: "60px",
+                      color:
+                        selected.label === item.label ? "#ffffff" : "#444444",
+                      borderColor:
+                        selected.label === item.label ? "#33C481" : "#fff",
+                      backgroundColor:
+                        selected.label === item.label ? "#33C481" : "#ffffff",
+                      textTransform: "none",
+                      "&:hover": {
+                        backgroundColor: "#33C481",
+                        color: "#ffffff",
+                      },
+                      borderRadius: "20px",
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Box>
+      </div>
+
+      {/* Our Clients & Partners */}
+      <div className="w-full flex flex-col md:flex-row justify-center items-start mt-20">
+        <Image
+          src={ourclient.src}
+          alt="ourclient"
+          width={100}
+          height={100}
+          style={{ width: "640px" }}
+        />
+        <Box className="flex flex-col p-10">
+          <Typography
+            sx={{
+              fontSize: "48px",
+              lineHeight: "70px",
+              fontWeight: "900",
+              color: "#222222",
+              textTransform: "uppercase",
+            }}
+          >
+            Our Clients & <span style={{ color: "#33C481" }}>Partners</span>
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "22px",
+              lineHeight: "34px",
+              fontWeight: "400",
+              color: "#444444",
+            }}
+          >
+            We collaborate with Indian and global partners to bring the best of
+            battery technology to every project.
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "22px",
+              lineHeight: "34px",
+              fontWeight: "600",
+              color: "#444444",
+            }}
+          >
+            We proudly serve a diverse client base including
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: "18px",
+              lineHeight: "100%",
+              fontWeight: "500",
+              color: "#444444",
+            }}
+          >
+            <Checkbox
+              disabled
+              checked
+              sx={{ "&.Mui-checked": { color: "#33C481" } }}
+            />
+            We proudly serve a diverse client base including
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "18px",
+              lineHeight: "100%",
+              fontWeight: "500",
+              color: "#444444",
+            }}
+          >
+            <Checkbox
+              disabled
+              checked
+              sx={{ "&.Mui-checked": { color: "#33C481" } }}
+            />
+            Solar EPCs and renewable project developers
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "18px",
+              lineHeight: "100%",
+              fontWeight: "500",
+              color: "#444444",
+            }}
+          >
+            <Checkbox
+              disabled
+              checked
+              sx={{ "&.Mui-checked": { color: "#33C481" } }}
+            />
+            Large manufacturing and IT campuses
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "18px",
+              lineHeight: "100%",
+              fontWeight: "500",
+              color: "#444444",
+            }}
+          >
+            <Checkbox
+              disabled
+              checked
+              sx={{ "&.Mui-checked": { color: "#33C481" } }}
+            />
+            Public infrastructure agencies
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "18px",
+              lineHeight: "100%",
+              fontWeight: "500",
+              color: "#444444",
+            }}
+          >
+            <Checkbox
+              disabled
+              checked
+              sx={{ "&.Mui-checked": { color: "#33C481" } }}
+            />
+            NGOs and rural electrification programs
+          </Typography>
+        </Box>
+      </div>
+
+      {/* DRIVING INDIA’S ENERGY FUTURE */}
+      <div className="w-full flex flex-col justify-center items-center mt-20">
+        <Typography
+          sx={{
+            fontSize: "48px",
+            lineHeight: "70px",
+            fontWeight: "900",
+            color: "#222222",
+          }}
+        >
+          DRIVING INDIA&apos;S{" "}
+          <span style={{ color: "#33C481" }}>ENERGY FUTURE</span>
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: "22px",
+            lineHeight: "34px",
+            fontWeight: "500",
+            color: "#444444",
+            textAlign: "center",
+          }}
+        >
+          Our leadership team is at the heart of our mission to accelerate
+          India’s clean energy transition. Their expertise
+          <br />
+          and vision guide us in delivering smart, reliable solutions that power
+          the nation&apos;s energy ecosystem.
+        </Typography>
+
+        <Box className="w-full flex flex-col md:flex-row justify-center items-center">
+          <Card>
+            <CardContent>
+              <Image
+                src="https://picsum.photos/seed/picsum/200/300"
+                alt=""
+                width={200}
+                height={200}
+              />
+              <Typography
+                sx={{
+                  fontSize: "22px",
+                  lineHeight: "30px",
+                  fontWeight: "700",
+                  color: "#222222",
+                  textAlign: "center",
+                }}
+              >
+                Kshitij Marathe
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  lineHeight: "30px",
+                  fontWeight: "500",
+                  color: "#444444",
+                  textAlign: "center",
+                }}
+              >
+                Founder & CEO
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <IconButton>
+                  <LinkedInIcon sx={{ color: "#000000" }} />
+                </IconButton>
+                <IconButton>
+                  <XIcon sx={{ color: "#000000" }} />
+                </IconButton>
+              </Box>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent>
+              <Image
+                src="https://picsum.photos/seed/picsum/200/300"
+                alt=""
+                width={200}
+                height={200}
+              />
+              <Typography
+                sx={{
+                  fontSize: "22px",
+                  lineHeight: "30px",
+                  fontWeight: "700",
+                  color: "#222222",
+                  textAlign: "center",
+                }}
+              >
+                Pravin Chandel
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  lineHeight: "30px",
+                  fontWeight: "500",
+                  color: "#444444",
+                  textAlign: "center",
+                }}
+              >
+                Founder & CTO
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <IconButton>
+                  <LinkedInIcon sx={{ color: "#000000" }} />
+                </IconButton>
+                <IconButton>
+                  <XIcon sx={{ color: "#000000" }} />
+                </IconButton>
+              </Box>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent>
+              <Image
+                src="https://picsum.photos/seed/picsum/200/300"
+                alt=""
+                width={200}
+                height={200}
+              />
+              <Typography
+                sx={{
+                  fontSize: "22px",
+                  lineHeight: "30px",
+                  fontWeight: "700",
+                  color: "#222222",
+                  textAlign: "center",
+                }}
+              >
+                Maifooz Sheikh
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  lineHeight: "30px",
+                  fontWeight: "500",
+                  color: "#444444",
+                  textAlign: "center",
+                }}
+              >
+                Software Engineer
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <IconButton
+                  href="https://www.linkedin.com/in/maifooz-sheikh-18658177/"
+                  target="_blank"
+                >
+                  <LinkedInIcon sx={{ color: "#000000" }} />
+                </IconButton>
+                <IconButton>
+                  <XIcon sx={{ color: "#000000" }} />
+                </IconButton>
+              </Box>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent>
+              <Image
+                src="https://picsum.photos/seed/picsum/200/300"
+                alt=""
+                width={200}
+                height={200}
+              />
+              <Typography
+                sx={{
+                  fontSize: "22px",
+                  lineHeight: "30px",
+                  fontWeight: "700",
+                  color: "#222222",
+                  textAlign: "center",
+                }}
+              >
+                Chetan Bhurangi
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  lineHeight: "30px",
+                  fontWeight: "500",
+                  color: "#444444",
+                  textAlign: "center",
+                }}
+              >
+                SCADA Enginner
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <IconButton>
+                  <LinkedInIcon sx={{ color: "#000000" }} />
+                </IconButton>
+                <IconButton>
+                  <XIcon sx={{ color: "#000000" }} />
+                </IconButton>
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
+      </div>
+
+      {/* Vision for the Future */}
+      <div
+        className="w-full flex flex-col justify-start items-start mt-20"
+        style={{
+          backgroundImage: `url(${vision.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          width: "100%",
+          minHeight: "98vh",
+        }}
+      >
+        <Box sx={{ maxWidth: "690px", padding: "2rem", marginTop: "10rem" }}>
+          <Typography
+            sx={{ fontSize: "48px", lineHeight: "70px", fontWeight: "900" }}
+          >
+            Vision <span style={{ color: "#33C481" }}>for the Future</span>
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "22px",
+              lineHeight: "34px",
+              fontWeight: "400",
+              color: "#444444",
+            }}
+          >
+            As a clean tech company, we believe that energy storage is the
+            cornerstone of a sustainable and resilient energy future. As India
+            moves toward ambitious clean energy goals, our energy storage
+            company is committed to staying at the forefront—developing
+            indigenous, cost-effective, and adaptive storage technologies for
+            generations to come.
+          </Typography>
+        </Box>
+      </div>
+
+      {/* Let’s Build the Future of Energy Together */}
+      <div className="w-full flex flex-col justify-center items-center mt-20">
+        <Typography
+          sx={{
+            fontSize: "48px",
+            lineHeight: "70px",
+            fontWeight: "900",
+            textAlign: "center",
+          }}
+        >
+          Let&apos;s Build the Future of{" "}
+          <span style={{ color: "#33C481" }}>Energy Together</span>
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: "22px",
+            lineHeight: "34px",
+            fontWeight: "500",
+            color: "#444444",
+            textAlign: "center",
+          }}
+        >
+          Want to partner with us, invest in energy storage, or join our team?
+        </Typography>
+        <Box className="flex flex-col md:flex-row justify-center items-start md:items-center gap-10  mt-20">
+          <Box className="flex flex-row gap-x-5 ">
+            <Image src={http} alt="" width={60} height={60} />
+            <Box>
+              <Typography
+                sx={{
+                  fontSize: "24px",
+                  lineHeight: "30px",
+                  fontWeight: "500",
+                  color: "#333333",
+                }}
+              >
+                Visit
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  lineHeight: "30px",
+                  fontWeight: "400",
+                  color: "#333333",
+                }}
+              >
+                https://rebuffr.com/
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box className="flex flex-row gap-x-5 ">
+            <Image src={building.src} alt="" width={60} height={60} />
+            <Box>
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  lineHeight: "30px",
+                  fontWeight: "400",
+                  color: "#333333",
+                }}
+              >
+                Rebuffr Systems Pvt. Ltd.
+                <br />
+                301, Mont Vert Apex, Baner, Pune - 411045, <br />
+                Maharashtra, India
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
       </div>
     </div>
   );

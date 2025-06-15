@@ -46,12 +46,12 @@ import sula from "./assets/sula.svg";
 import york from "./assets/york.svg";
 import double_inverted from "./assets/double_inverted.svg";
 
-import ev from "./assets/temp/ev.jpeg";
-import it_park from "./assets/temp/it_park.jpeg";
-import manufacturing from "./assets/temp/manufacturing.jpeg";
-import smart_city from "./assets/temp/smart_city.jpeg";
-import solar_epc from "./assets/temp/solar_epc.jpeg";
-import utility from "./assets/temp/utility.jpeg";
+import ev from "./assets/ev.svg";
+import it_park from "./assets/it_park.svg";
+import manufacturing from "./assets/manufacturing.svg";
+import smart_city from "./assets/smart_city.svg";
+import solar_epc from "./assets/solar_epc.svg";
+import utility from "./assets/utility.svg";
 
 import whychooseus_bg from "./assets/whychooseus_bg.svg";
 import whychooseus_container from "./assets/whychooseus_container.svg";
@@ -106,8 +106,7 @@ export default function Home() {
     {
       logo: endtoend.src,
       head: "End-to-End Delivery",
-      description:
-        "Design,integration,commissioning, and after-sales support",
+      description: "Design,integration,commissioning, and after-sales support",
     },
     {
       logo: smartems.src,
@@ -919,7 +918,7 @@ export default function Home() {
             alt={selected.label}
             style={{
               width: "1200px",
-              height: "800px",
+              height: "600px",
               objectFit: "cover",
               borderRadius: "30px",
             }}
