@@ -90,7 +90,7 @@ const AboutUs = () => {
 
   const [selectCapability, setSelectCapability] = useState(ourcapability[0]);
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="w-full flex flex-col justify-center items-center pl-10 pr-2">
       {/* Powering a Resilient Future  */}
       <div
         className="w-full flex flex-col justify-center items-center text-center mt-30 mb-40"

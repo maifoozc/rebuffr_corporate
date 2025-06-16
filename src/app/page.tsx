@@ -125,7 +125,7 @@ export default function Home() {
     },
   ];
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center pl-10 pr-2">
       {/* Top Section */}
       <div className="w-full min-h-screen flex flex-col md:flex-row justify-center items-center md:items-center sm:items-start xs:items-start">
         <div className="w-full md:w-1/2 flex justify-center items-center order-1">

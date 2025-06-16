@@ -26,7 +26,11 @@ export default function RootLayout({
         <Suspense fallback={<div>Loading...</div>}>
           <main>
             <Header />
-            <div className="ml-10 mr-2">{children}</div>
+            <div
+            // className="ml-10 mr-2"
+            >
+              {children}
+            </div>
             <Footer />
           </main>
         </Suspense>
