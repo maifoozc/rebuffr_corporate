@@ -1,16 +1,24 @@
 "use client";
 import {
   Box,
+  Button,
   Card,
   CardContent,
   Checkbox,
+  FormControl,
+  FormLabel,
   Grid,
+  InputLabel,
+  MenuItem,
   Paper,
+  Select,
+  SelectChangeEvent,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
+  TextField,
   ToggleButton,
   ToggleButtonGroup,
   Typography,
@@ -31,7 +39,7 @@ import maharashtra from "../assets/maharashtra.svg";
 import odisha from "../assets/odisha.svg";
 import tamil_nadu from "../assets/tamil_nadu.svg";
 import pondicherry from "../assets/pondicherry.svg";
-import maldives from "../assets/maldives.svg"
+import maldives from "../assets/maldives.svg";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -71,6 +79,12 @@ const Product = () => {
   } as const;
 
   const currentProduct = productTypeDetail[productType];
+
+  const [solutionType, setSolutionType] = useState("residential");
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setSolutionType(event.target.value as string);
+  };
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center">
@@ -919,7 +933,7 @@ const Product = () => {
           We&apos;ve deployed systems in
         </Typography>
 
-        <Grid container spacing={2} sx={{ width: "100%" ,padding:"2rem"}}>
+        <Grid container spacing={2} sx={{ width: "100%", padding: "2rem" }}>
           <Grid size={{ xs: 12, sm: 12, md: 4 }}>
             <Card
               style={{
@@ -1028,6 +1042,219 @@ const Product = () => {
             </Card>
           </Grid>
         </Grid>
+      </div>
+
+      {/* Let's Power India Together  */}
+      <div className="w-full flex flex-col  justify-center items-center mt-20 pl-10 pr-2">
+        <Typography
+          sx={{
+            fontSize: "44px",
+            lineHeight: "70px",
+            fontWeight: "400",
+            color: "#33C481",
+            textAlign: "center",
+            textTransform: "uppercase",
+          }}
+        >
+          Let&apos;s Power India Together
+          <br />
+          <span
+            style={{ color: "#222222", fontSize: "44px", fontWeight: "700" }}
+          >
+            Get a Custom BESS Quote
+          </span>
+        </Typography>
+
+        <Typography
+          sx={{
+            fontSize: "22px",
+            lineHeight: "34px",
+            fontWeight: "700",
+            color: "#444444",
+            textAlign: "center",
+          }}
+        >
+          Whether you&apos;re an EPC, project developer, industrial buyer, or
+          DISCOM, we&apos;re here to build a custom BESS and energy management
+          systems solution for your needs in India.
+        </Typography>
+        <Box className="flex flex-col md:flex-row justify-center items-center mt-20">
+          <Box className="w-full md:w-1/2">
+            <Typography
+              sx={{
+                fontSize: "44px",
+                lineHeight: "70px",
+                fontWeight: "900",
+                color: "#222222",
+                textTransform: "uppercase",
+              }}
+            >
+              Request a Quote
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "48px",
+                lineHeight: "70px",
+                fontWeight: "400",
+                color: "#33C481",
+                textTransform: "uppercase",
+              }}
+            >
+              for India
+            </Typography>
+          </Box>
+          <Box className="w-full md:w-1/2">
+            <Grid container spacing={2}>
+              <Grid size={{ md: 6, sm: 12 }}>
+                <FormLabel
+                  required
+                  sx={{
+                    fontSize: "18px",
+                    lineHeight: "100%",
+                    fontWeight: "500",
+                  }}
+                >
+                  NAME
+                </FormLabel>
+                <TextField
+                  placeholder="Enter Name"
+                  variant="outlined"
+                  size="medium"
+                  sx={{
+                    width: "100%",
+                    fontSize: "18px",
+                    lineHeight: "100%",
+                    fontWeight: "500",
+                  }}
+                />
+              </Grid>
+              <Grid size={{ md: 6, sm: 12 }}>
+                <FormLabel
+                  required
+                  sx={{
+                    fontSize: "18px",
+                    lineHeight: "100%",
+                    fontWeight: "500",
+                  }}
+                >
+                  EMAIL ID
+                </FormLabel>
+                <TextField
+                  placeholder="Enter Email"
+                  variant="outlined"
+                  size="medium"
+                  sx={{
+                    width: "100%",
+                    fontSize: "18px",
+                    lineHeight: "100%",
+                    fontWeight: "500",
+                  }}
+                />
+              </Grid>
+              <Grid size={{ md: 6, sm: 12 }}>
+                <FormLabel
+                  required
+                  sx={{
+                    fontSize: "18px",
+                    lineHeight: "100%",
+                    fontWeight: "500",
+                  }}
+                >
+                  PHONE NUMBER
+                </FormLabel>
+                <TextField
+                  placeholder="Enter Phone Number"
+                  variant="outlined"
+                  size="medium"
+                  sx={{
+                    width: "100%",
+                    fontSize: "18px",
+                    lineHeight: "100%",
+                    fontWeight: "500",
+                  }}
+                />
+              </Grid>
+              <Grid size={{ md: 6, sm: 12 }}>
+                <FormControl fullWidth>
+                  <FormLabel
+                    required
+                    sx={{
+                      fontSize: "18px",
+                      lineHeight: "100%",
+                      fontWeight: "500",
+                    }}
+                  >
+                    Solution you are looking for
+                  </FormLabel>
+                  <InputLabel id="solution-type-label" required></InputLabel>
+                  <Select
+                    labelId="solution-type-label"
+                    id="demo-simple-select"
+                    value={solutionType}
+                    label="Solution"
+                    onChange={handleChange}
+                    sx={{
+                      width: "100%",
+                      fontSize: "18px",
+                      lineHeight: "100%",
+                      fontWeight: "500",
+                    }}
+                  >
+                    <MenuItem value="residential">Residential</MenuItem>
+                    <MenuItem value="commercial">Commercial</MenuItem>
+                    <MenuItem value="industrial">Industrial</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid size={12}>
+                <FormLabel
+                  required
+                  sx={{
+                    fontSize: "18px",
+                    lineHeight: "100%",
+                    fontWeight: "500",
+                  }}
+                >
+                  Leave a message for us
+                </FormLabel>
+                <TextField
+                  placeholder="Type Your Message"
+                  variant="outlined"
+                  size="medium"
+                  multiline
+                  rows={4}
+                  sx={{
+                    width: "100%",
+                    fontSize: "18px",
+                    lineHeight: "100%",
+                    fontWeight: "500",
+                  }}
+                />
+              </Grid>
+              <Box className="w-full flex justify-start items-center">
+                <Checkbox />
+                <Typography>
+                  I agree all the terms & Conditions & Privacy Policy
+                </Typography>
+              </Box>
+              <Button
+                sx={{
+                  fontSize: "18px",
+                  fontWeight: "700",
+                  color: "#ffffff",
+                  lineHeight: "20px",
+                  backgroundColor: "#33C481",
+                  padding: "18px 36px",
+                  borderRadius: "30px",
+                  cursor: "pointer",
+                  width: "fit-content",
+                }}
+              >
+                Schedule a Consultation
+              </Button>
+            </Grid>
+          </Box>
+        </Box>
       </div>
     </div>
   );

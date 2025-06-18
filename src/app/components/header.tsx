@@ -11,7 +11,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
   { label: "Products", href: "/products" },
-  { label: "Ingenium EMS", href: "/ingenium-ems" },
+  { label: "Ingenium EMS", href: "/ingenium" },
   { label: "Contact Us", href: "/contact" },
 ];
 

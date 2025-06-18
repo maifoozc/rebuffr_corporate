@@ -820,10 +820,10 @@ export default function Home() {
             lineHeight: "70px",
             fontWeight: "900",
             color: "#000000",
-            textAlign: "center",
+            textAlign: "center", textTransform:"uppercase"
           }}
         >
-          Why choose
+          Why choose{" "}
           <span style={{ color: "rgba(51, 196, 129, 1)" }}>REBUFFR</span>
         </Typography>
 
