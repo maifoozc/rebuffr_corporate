@@ -6,7 +6,7 @@ import {
   CardContent,
   Checkbox,
   FormControl,
-  FormLabel,
+  // FormLabel,
   InputLabel,
   MenuItem,
   Select,
@@ -197,6 +197,7 @@ export default function Home() {
             fontWeight: "400",
             color: "#33C481",
             textAlign: "center",
+            textTransform: "uppercase",
           }}
         >
           Powering the Future with
@@ -208,6 +209,7 @@ export default function Home() {
             fontWeight: "900",
             color: "#000000",
             textAlign: "center",
+            textTransform: "uppercase",
           }}
         >
           Intelligent Battery Energy Storage <br />
@@ -282,6 +284,7 @@ export default function Home() {
             fontWeight: "400",
             color: "#33C481",
             textAlign: "center",
+            textTransform: "uppercase",
           }}
         >
           Built in India
@@ -293,6 +296,7 @@ export default function Home() {
             fontWeight: "900",
             color: "#000000",
             textAlign: "center",
+            textTransform: "uppercase",
           }}
         >
           Engineered for the World
@@ -820,11 +824,12 @@ export default function Home() {
             lineHeight: "70px",
             fontWeight: "900",
             color: "#000000",
-            textAlign: "center", textTransform:"uppercase"
+            textAlign: "center",
+            textTransform: "uppercase",
           }}
         >
           Why choose{" "}
-          <span style={{ color: "rgba(51, 196, 129, 1)" }}>REBUFFR</span>
+          <span style={{ color: "rgba(51, 196, 129, 1)" }}>REBUFFR ?</span>
         </Typography>
 
         <Image
@@ -901,6 +906,7 @@ export default function Home() {
             lineHeight: "70px",
             fontWeight: "900",
             textAlign: "center",
+            textTransform: "uppercase",
           }}
         >
           Who We <span style={{ color: "#33C481" }}>Work With</span>
@@ -968,7 +974,7 @@ export default function Home() {
       </div>
 
       {/* our clients */}
-      <div className="w-full flex flex-col justify-center items-center mt-10">
+      <div className="w-full flex flex-col justify-center items-center mt-20">
         <Typography
           sx={{
             fontSize: "48px",
@@ -1084,7 +1090,7 @@ export default function Home() {
       </div>
 
       {/* Client Testimonials */}
-      <div className="w-full flex flex-col justify-center items-center mt-10 md:mr-30 md:ml-30">
+      <div className="w-full flex flex-col justify-center items-center mt-20 md:mr-30 md:ml-30">
         <Typography
           sx={{
             fontSize: "48px",
@@ -1295,21 +1301,24 @@ export default function Home() {
               color: "#444444",
             }}
           >
-            Let’s help you build a clean, resilient, and cost-effective energy
-            future.
+            Let&apos;s help you build a clean, resilient, and cost-effective
+            energy future.
           </Typography>
         </Box>
         <Box className="w-full md:w-1/2">
           <Grid container spacing={2}>
             <Grid size={{ md: 6, sm: 12 }}>
-              <FormLabel
+              {/* <FormLabel
                 required
                 sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
               >
                 NAME
-              </FormLabel>
+              </FormLabel> */}
               <TextField
                 placeholder="Enter Name"
+                label="NAME"
+                required
+                focused
                 variant="outlined"
                 size="medium"
                 sx={{
@@ -1317,18 +1326,29 @@ export default function Home() {
                   fontSize: "18px",
                   lineHeight: "100%",
                   fontWeight: "500",
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "rgba(0, 0, 0, 0.6)",
+                    },
+                  },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "rgba(0, 0, 0, 0.6)",
+                  },
                 }}
               />
             </Grid>
             <Grid size={{ md: 6, sm: 12 }}>
-              <FormLabel
+              {/* <FormLabel
                 required
                 sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
               >
                 EMAIL ID
-              </FormLabel>
+              </FormLabel> */}
               <TextField
                 placeholder="Enter Email"
+                label="EMAIL ID"
+                required
+                focused
                 variant="outlined"
                 size="medium"
                 sx={{
@@ -1336,18 +1356,29 @@ export default function Home() {
                   fontSize: "18px",
                   lineHeight: "100%",
                   fontWeight: "500",
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "rgba(0, 0, 0, 0.6)",
+                    },
+                  },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "rgba(0, 0, 0, 0.6)",
+                  },
                 }}
               />
             </Grid>
             <Grid size={{ md: 6, sm: 12 }}>
-              <FormLabel
+              {/* <FormLabel
                 required
                 sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
               >
                 PHONE NUMBER
-              </FormLabel>
+              </FormLabel> */}
               <TextField
                 placeholder="Enter Phone Number"
+                label="PHONE NUMBER"
+                required
+                focused
                 variant="outlined"
                 size="medium"
                 sx={{
@@ -1355,33 +1386,52 @@ export default function Home() {
                   fontSize: "18px",
                   lineHeight: "100%",
                   fontWeight: "500",
+                  marginTop: "7px",
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "rgba(0, 0, 0, 0.6)",
+                    },
+                  },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "rgba(0, 0, 0, 0.6)",
+                  },
                 }}
               />
             </Grid>
             <Grid size={{ md: 6, sm: 12 }}>
               <FormControl fullWidth>
-                <FormLabel
+                {/* <FormLabel
                   required
                   sx={{
                     fontSize: "18px",
                     lineHeight: "100%",
                     fontWeight: "500",
+                    textTransform: "uppercase",
                   }}
                 >
-                  Solution you are looking for
-                </FormLabel>
-                <InputLabel id="solution-type-label" required></InputLabel>
+                  Solutions
+                </FormLabel> */}
+                <InputLabel id="solution-type-label">SOLUTIONS</InputLabel>
                 <Select
                   labelId="solution-type-label"
                   id="demo-simple-select"
                   value={solutionType}
-                  label="Solution"
+                  label="Solutions"
                   onChange={handleChange}
                   sx={{
                     width: "100%",
                     fontSize: "18px",
                     lineHeight: "100%",
                     fontWeight: "500",
+                    marginTop: "5px",
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: "rgba(0, 0, 0, 0.6)",
+                      },
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: "rgba(0, 0, 0, 0.6)",
+                    },
                   }}
                 >
                   <MenuItem value="residential">Residential</MenuItem>
@@ -1391,14 +1441,16 @@ export default function Home() {
               </FormControl>
             </Grid>
             <Grid size={12}>
-              <FormLabel
+              {/* <FormLabel
                 required
                 sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
               >
-                Leave a message for us
-              </FormLabel>
+                DESCRIPTION
+              </FormLabel> */}
               <TextField
-                placeholder="Type Your Message"
+                placeholder="Type Your Message" label="DESCRIPTION"
+                required
+                focused
                 variant="outlined"
                 size="medium"
                 multiline
@@ -1408,6 +1460,14 @@ export default function Home() {
                   fontSize: "18px",
                   lineHeight: "100%",
                   fontWeight: "500",
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "rgba(0, 0, 0, 0.6)",
+                    },
+                  },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "rgba(0, 0, 0, 0.6)",
+                  },
                 }}
               />
             </Grid>
