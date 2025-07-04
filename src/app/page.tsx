@@ -123,6 +123,11 @@ export default function Home() {
       head: "Future-Ready",
       description: "Scalable, tech-agnostic, and upgradable BESS platforms",
     },
+    {
+      logo: futureready.src,
+      head: "Future-Ready",
+      description: "Scalable, tech-agnostic, and upgradable BESS platforms",
+    },
   ];
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center pl-10 pr-2">
@@ -188,6 +193,21 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="w-full flex justify-center items-center mt-10 bg-amber-700">
+        <video
+          width="100%"
+          height="auto"
+          autoPlay
+          muted
+          loop
+          controls
+          style={{ borderRadius: "10px", height: "500px" }}
+        >
+          <source src="/previewVideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       {/* Powering Section */}
       <div className="w-full flex flex-col justify-center items-center mt-20">
         <Typography
@@ -213,7 +233,7 @@ export default function Home() {
           }}
         >
           Intelligent Battery Energy Storage <br />
-          Systems (BESS)
+          Systems (I-BESS)
         </Typography>
         <Typography
           sx={{
@@ -328,7 +348,8 @@ export default function Home() {
             sx={{
               fontSize: "36px",
               lineHeight: "100%",
-              fontWeight: "900",
+              // fontWeight: "900",
+              fontWeight: "400",
               color: "#222222",
               textAlign: "center",
             }}
@@ -1279,6 +1300,7 @@ export default function Home() {
               lineHeight: "70px",
               fontWeight: "400",
               color: "#33C481",
+              textTransform: "uppercase",
             }}
           >
             Get Started with a
@@ -1289,6 +1311,7 @@ export default function Home() {
               lineHeight: "70px",
               fontWeight: "900",
               color: "#222222",
+              textTransform: "uppercase",
             }}
           >
             Custom BESS Solution
@@ -1318,7 +1341,7 @@ export default function Home() {
                 placeholder="Enter Name"
                 label="NAME"
                 required
-                focused
+                // focused
                 variant="outlined"
                 size="medium"
                 sx={{
@@ -1348,7 +1371,7 @@ export default function Home() {
                 placeholder="Enter Email"
                 label="EMAIL ID"
                 required
-                focused
+                // focused
                 variant="outlined"
                 size="medium"
                 sx={{
@@ -1378,7 +1401,7 @@ export default function Home() {
                 placeholder="Enter Phone Number"
                 label="PHONE NUMBER"
                 required
-                focused
+                // focused
                 variant="outlined"
                 size="medium"
                 sx={{
@@ -1416,7 +1439,7 @@ export default function Home() {
                   labelId="solution-type-label"
                   id="demo-simple-select"
                   value={solutionType}
-                  label="Solutions"
+                  label="SOLUTIONS"
                   onChange={handleChange}
                   sx={{
                     width: "100%",
@@ -1448,9 +1471,10 @@ export default function Home() {
                 DESCRIPTION
               </FormLabel> */}
               <TextField
-                placeholder="Type Your Message" label="DESCRIPTION"
+                placeholder="Type Your Message"
+                label="DESCRIPTION"
                 required
-                focused
+                // focused
                 variant="outlined"
                 size="medium"
                 multiline

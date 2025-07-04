@@ -8,7 +8,7 @@ import telephone from "../assets/telephone.svg";
 import building from "../assets/building.svg";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 // import FacebookIcon from "@mui/icons-material/Facebook";
-// import YouTubeIcon from "@mui/icons-material/YouTube";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Footer = () => {
@@ -30,7 +30,7 @@ const Footer = () => {
         <Grid
           container
           spacing={2}
-          className="text-whit w-full flex flex-col md:flex-row"
+          className="text-whit w-full flex flex-col md:flex-row justify-betwen items-center"
         >
           <Grid
             size={{ xs: 12, sm: 12, md: 2 }}
@@ -50,7 +50,7 @@ const Footer = () => {
             size={{ xs: 12, sm: 12, md: 2 }}
             className="flex justify-center items-center"
           >
-            <div className="flex flex-row  justify-center items-center gap-2 text-white">
+            <div className="flex flex-row  justify-between items-center gap-2 text-white">
               {/* <IconButton
                 sx={{
                   width: "50px",
@@ -60,17 +60,22 @@ const Footer = () => {
                 }}
               >
                 <FacebookIcon />
-              </IconButton>
+              </IconButton> */}
               <IconButton
                 sx={{
-                  width: "50px",
-                  height: "50px",
+                  // width: "50px",
+                  // height: "50px",
                   borderRadius: "50%",
                   color: "#ffffff",
                 }}
               >
-                <YouTubeIcon />
-              </IconButton> */}
+                <YouTubeIcon
+                  sx={{
+                    width: "50px",
+                    height: "50px",
+                  }}
+                />
+              </IconButton>
               <IconButton
                 sx={{
                   // width: "50px",
@@ -81,16 +86,19 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/rebuffr-systems-private-limited/posts/?feedView=all"
                 target="_blank"
               >
-                <LinkedInIcon sx={{
-                  width: "50px",
-                  height: "50px",}}/>
+                <LinkedInIcon
+                  sx={{
+                    width: "50px",
+                    height: "50px",
+                  }}
+                />
               </IconButton>
             </div>
           </Grid>
 
           <Grid
             size={{ xs: 12, sm: 12, md: 2 }}
-            className="flex justify-start items-center"
+            className="flex justify-center items-center"
           >
             <div className="flex flex-row  justify-start items-center gap-2 text-white">
               <Image
@@ -126,7 +134,7 @@ const Footer = () => {
 
           <Grid
             size={{ sm: 12, md: 3 }}
-            className="flex justify-start items-center"
+            className="flex justify-center items-center "
           >
             <div className="flex flex-row  justify-start items-center gap-2 text-white">
               <Image
@@ -190,7 +198,7 @@ const Footer = () => {
                     fontWeight: "400",
                   }}
                 >
-                  Pune, Maharashtra , India
+                  Pune, India
                 </Typography>
               </div>
             </div>

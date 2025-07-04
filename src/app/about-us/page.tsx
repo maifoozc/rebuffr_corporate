@@ -93,7 +93,7 @@ const AboutUs = () => {
     <div className="w-full flex flex-col justify-center items-center pl-10 pr-2">
       {/* Powering a Resilient Future  */}
       <div
-        className="w-full flex flex-col justify-center items-center text-center mt-30 mb-40"
+        className="w-full flex flex-col justify-center items-center text-center mb-40"
         style={{
           backgroundImage: `url(${aboutus_landing.src})`,
           backgroundSize: "cover",
@@ -117,7 +117,7 @@ const AboutUs = () => {
           sx={{
             fontSize: "60px",
             lineHeight: "138%",
-            fontWeight: "400",
+            fontWeight: "900",
             color: "#000000",
             textTransform: "uppercase",
           }}
@@ -938,7 +938,7 @@ const AboutUs = () => {
           <Typography
             sx={{ fontSize: "48px", lineHeight: "70px", fontWeight: "900" }}
           >
-            Vision <span style={{ color: "#33C481" }}>for the Future</span>
+            Vision <span style={{ color: "#C48133" }}>for the Future</span>
           </Typography>
           <Typography
             sx={{
@@ -959,7 +959,7 @@ const AboutUs = () => {
       </div>
 
       {/* Let’s Build the Future of Energy Together */}
-      <div className="w-full flex flex-col justify-center items-center mt-20">
+      <div className="w-full flex flex-col justify-center items-center mt-40">
         <Typography
           sx={{
             fontSize: "48px",
@@ -982,7 +982,7 @@ const AboutUs = () => {
         >
           Want to partner with us, invest in energy storage, or join our team?
         </Typography>
-        <Box className="flex flex-col md:flex-row justify-center items-start md:items-center gap-10  mt-20">
+        <Box className="flex flex-col md:flex-row justify-center items-start md:items-center gap-10  mt-20 mb-20">
           <Box className="flex flex-row gap-x-5 ">
             <Image src={http} alt="" width={60} height={60} />
             <Box>

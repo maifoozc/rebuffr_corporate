@@ -103,7 +103,7 @@ const Product = () => {
             width: "100%",
             maxWidth: "856px",
             padding: "20px",
-            marginTop: "10%",
+            marginTop: "2%",
           }}
         >
           <Typography
@@ -191,9 +191,9 @@ const Product = () => {
               lineHeight: "34px",
               fontWeight: "400",
               color: "#444444",
-              width: "100%",
+              width: "100%",height:"300px", borderRadius:"10px",marginRight:"5px",
               maxWidth: "600px",
-              padding: "10px",
+              padding: "10px", backgroundColor:"#2DAF73"
             }}
           >
             {currentProduct.label}
@@ -203,7 +203,9 @@ const Product = () => {
             alt=""
             width={100}
             height={100}
-            style={{ width: "597px", maxHeight: "400px", borderRadius: "20px" }}
+            // style={{ width: "597px", maxHeight: "400px", borderRadius: "20px" }}
+          style={{ width: "300px", height: "300px", borderRadius: "20px" }}
+          
           />
         </div>
       </div>

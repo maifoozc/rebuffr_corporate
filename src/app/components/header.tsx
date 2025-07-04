@@ -12,7 +12,7 @@ const navItems = [
   { label: "About Us", href: "/about-us" },
   { label: "Products", href: "/products" },
   { label: "Ingenium EMS", href: "/ingenium" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 const Header = () => {
