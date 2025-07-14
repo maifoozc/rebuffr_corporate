@@ -1,24 +1,10 @@
 "use client";
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  Checkbox,
-  FormControl,
-  // FormLabel,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 import Image from "next/image";
 import flow from "./assets/flow.gif";
-import container from "./assets/container.png";
+// import container from "./assets/container.png";
 import check_mark from "./assets/check_mark.png";
-import wind_container from "./assets/wind_container.png";
+// import wind_container from "./assets/wind_container.png";
 import CI_logo from "./assets/CI_logo.png";
 import EV_logo from "./assets/EV_logo.png";
 import GU_logo from "./assets/GU_logo.png";
@@ -54,12 +40,19 @@ import solar_epc from "./assets/solar_epc.svg";
 import utility from "./assets/utility.svg";
 
 import whychooseus_bg from "./assets/whychooseus_bg.svg";
-import whychooseus_container from "./assets/whychooseus_container.svg";
+// import whychooseus_container from "./assets/whychooseus_container.svg";
 import custom_bess from "./assets/custom_bess.svg";
 import endtoend from "./assets/endtoend.svg";
 import smartems from "./assets/smartems.svg";
 import indiafocused from "./assets/indiafocused.svg";
 import futureready from "./assets/futureready.svg";
+import ScheduleConsultant from "./components/scheduleConsultant";
+
+import rebuffr_bess_container from "./assets/rebuffr_bess_container.svg";
+import nise from "./assets/nise.svg";
+import oilindia from "./assets/oilindia.svg";
+import Auroville_side_pose from "./assets/Auroville_side_pose.svg";
+import mundle_pasaydan from "./assets/mundle_pasaydan.svg";
 
 export default function Home() {
   const sections = [
@@ -90,12 +83,6 @@ export default function Home() {
   ];
 
   const [selected, setSelected] = useState(sections[0]);
-
-  const [solutionType, setSolutionType] = useState("residential");
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setSolutionType(event.target.value as string);
-  };
 
   const whychooseus = [
     {
@@ -284,12 +271,14 @@ export default function Home() {
         </Button>
 
         <Image
-          src={battery_laptop.src}
+          // src={battery_laptop.src}
+          src={rebuffr_bess_container.src}
           width={100}
           height={100}
           alt="battery"
           style={{
-            width: "1500px",
+            width: "100%",
+            maxHeight: "500px",
             objectFit: "fill",
           }}
         />
@@ -341,7 +330,14 @@ export default function Home() {
 
       {/* Container Image */}
       <div className="w-full flex flex-col md:flex-row justify-center items-center mt-20 gap-x-20">
-        <Image src={container.src} alt="container" width={560} height={560} />
+        <Image
+          // src={container.src}
+          src={Auroville_side_pose.src}
+          alt="container"
+          width={560}
+          height={560}
+          style={{ borderRadius: "10px" }}
+        />
 
         <div className="flex flex-col items-start">
           <Typography
@@ -458,7 +454,8 @@ export default function Home() {
 
         <div className="flex flex-col md:flex-row justify-center items-center mt-10 gap-x-10">
           <Image
-            src={wind_container.src}
+            // src={wind_container.src}
+            src={mundle_pasaydan.src}
             alt="wind_container"
             width={694}
             height={601}
@@ -854,7 +851,8 @@ export default function Home() {
         </Typography>
 
         <Image
-          src={whychooseus_container.src}
+          // src={whychooseus_container.src}
+          src={battery_laptop.src}
           alt="choose rebuffr"
           width={100}
           height={100}
@@ -1007,7 +1005,7 @@ export default function Home() {
           OUR <span style={{ color: "#33C481" }}>CLIENTS</span>
         </Typography>
 
-        <div className="space-y-4">
+        <div className="space-y-4 mt-10">
           <Marquee
             pauseOnHover
             speed={40}
@@ -1056,9 +1054,70 @@ export default function Home() {
               alt="pernord"
               className="slider_logo"
             />
+
+            <Image
+              src={nise.src}
+              width={100}
+              height={100}
+              alt="nise"
+              className="slider_logo"
+            />
+
+            <Image
+              src={oilindia.src}
+              width={100}
+              height={100}
+              alt="oilindia"
+              className="slider_logo"
+            />
+
+            {/* second layer */}
+
+            <Image
+              src={borosil.src}
+              width={100}
+              height={100}
+              alt="borosil"
+              className="slider_logo"
+            />
+            <Image
+              src={ghatge.src}
+              width={100}
+              height={100}
+              alt="parle"
+              className="slider_logo"
+            />
+            <Image
+              src={ssk.src}
+              width={100}
+              height={100}
+              alt="ssk"
+              className="slider_logo"
+            />
+            <Image
+              src={sula.src}
+              width={100}
+              height={100}
+              alt="sula"
+              className="slider_logo"
+            />
+            <Image
+              src={shahu.src}
+              width={100}
+              height={100}
+              alt="shahu"
+              className="slider_logo"
+            />
+            <Image
+              src={york.src}
+              width={100}
+              height={100}
+              alt="york"
+              className="slider_logo"
+            />
           </Marquee>
 
-          <Marquee
+          {/* <Marquee
             pauseOnHover
             speed={40}
             gradient={true}
@@ -1106,7 +1165,7 @@ export default function Home() {
               alt="york"
               className="slider_logo"
             />
-          </Marquee>
+          </Marquee> */}
         </div>
       </div>
 
@@ -1329,194 +1388,7 @@ export default function Home() {
           </Typography>
         </Box>
         <Box className="w-full md:w-1/2">
-          <Grid container spacing={2}>
-            <Grid size={{ md: 6, sm: 12 }}>
-              {/* <FormLabel
-                required
-                sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
-              >
-                NAME
-              </FormLabel> */}
-              <TextField
-                placeholder="Enter Name"
-                label="NAME"
-                required
-                // focused
-                variant="outlined"
-                size="medium"
-                sx={{
-                  width: "100%",
-                  fontSize: "18px",
-                  lineHeight: "100%",
-                  fontWeight: "500",
-                  "& .MuiOutlinedInput-root": {
-                    "&.Mui-focused fieldset": {
-                      borderColor: "rgba(0, 0, 0, 0.6)",
-                    },
-                  },
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "rgba(0, 0, 0, 0.6)",
-                  },
-                }}
-              />
-            </Grid>
-            <Grid size={{ md: 6, sm: 12 }}>
-              {/* <FormLabel
-                required
-                sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
-              >
-                EMAIL ID
-              </FormLabel> */}
-              <TextField
-                placeholder="Enter Email"
-                label="EMAIL ID"
-                required
-                // focused
-                variant="outlined"
-                size="medium"
-                sx={{
-                  width: "100%",
-                  fontSize: "18px",
-                  lineHeight: "100%",
-                  fontWeight: "500",
-                  "& .MuiOutlinedInput-root": {
-                    "&.Mui-focused fieldset": {
-                      borderColor: "rgba(0, 0, 0, 0.6)",
-                    },
-                  },
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "rgba(0, 0, 0, 0.6)",
-                  },
-                }}
-              />
-            </Grid>
-            <Grid size={{ md: 6, sm: 12 }}>
-              {/* <FormLabel
-                required
-                sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
-              >
-                PHONE NUMBER
-              </FormLabel> */}
-              <TextField
-                placeholder="Enter Phone Number"
-                label="PHONE NUMBER"
-                required
-                // focused
-                variant="outlined"
-                size="medium"
-                sx={{
-                  width: "100%",
-                  fontSize: "18px",
-                  lineHeight: "100%",
-                  fontWeight: "500",
-                  marginTop: "7px",
-                  "& .MuiOutlinedInput-root": {
-                    "&.Mui-focused fieldset": {
-                      borderColor: "rgba(0, 0, 0, 0.6)",
-                    },
-                  },
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "rgba(0, 0, 0, 0.6)",
-                  },
-                }}
-              />
-            </Grid>
-            <Grid size={{ md: 6, sm: 12 }}>
-              <FormControl fullWidth>
-                {/* <FormLabel
-                  required
-                  sx={{
-                    fontSize: "18px",
-                    lineHeight: "100%",
-                    fontWeight: "500",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Solutions
-                </FormLabel> */}
-                <InputLabel id="solution-type-label">SOLUTIONS</InputLabel>
-                <Select
-                  labelId="solution-type-label"
-                  id="demo-simple-select"
-                  value={solutionType}
-                  label="SOLUTIONS"
-                  onChange={handleChange}
-                  sx={{
-                    width: "100%",
-                    fontSize: "18px",
-                    lineHeight: "100%",
-                    fontWeight: "500",
-                    marginTop: "5px",
-                    "& .MuiOutlinedInput-root": {
-                      "&.Mui-focused fieldset": {
-                        borderColor: "rgba(0, 0, 0, 0.6)",
-                      },
-                    },
-                    "& .MuiInputLabel-root.Mui-focused": {
-                      color: "rgba(0, 0, 0, 0.6)",
-                    },
-                  }}
-                >
-                  <MenuItem value="residential">Residential</MenuItem>
-                  <MenuItem value="commercial">Commercial</MenuItem>
-                  <MenuItem value="industrial">Industrial</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-            <Grid size={12}>
-              {/* <FormLabel
-                required
-                sx={{ fontSize: "18px", lineHeight: "100%", fontWeight: "500" }}
-              >
-                DESCRIPTION
-              </FormLabel> */}
-              <TextField
-                placeholder="Type Your Message"
-                label="DESCRIPTION"
-                required
-                // focused
-                variant="outlined"
-                size="medium"
-                multiline
-                rows={4}
-                sx={{
-                  width: "100%",
-                  fontSize: "18px",
-                  lineHeight: "100%",
-                  fontWeight: "500",
-                  "& .MuiOutlinedInput-root": {
-                    "&.Mui-focused fieldset": {
-                      borderColor: "rgba(0, 0, 0, 0.6)",
-                    },
-                  },
-                  "& .MuiInputLabel-root.Mui-focused": {
-                    color: "rgba(0, 0, 0, 0.6)",
-                  },
-                }}
-              />
-            </Grid>
-            <Box className="w-full flex justify-start items-center">
-              <Checkbox />
-              <Typography>
-                I agree all the terms & Conditions & Privacy Policy
-              </Typography>
-            </Box>
-            <Button
-              sx={{
-                fontSize: "18px",
-                fontWeight: "700",
-                color: "#ffffff",
-                lineHeight: "20px",
-                backgroundColor: "#33C481",
-                padding: "18px 36px",
-                borderRadius: "30px",
-                cursor: "pointer",
-                width: "fit-content",
-              }}
-            >
-              Schedule a Consultation
-            </Button>
-          </Grid>
+          <ScheduleConsultant />
         </Box>
       </div>
     </div>

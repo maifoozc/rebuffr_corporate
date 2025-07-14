@@ -1,24 +1,16 @@
 "use client";
 import {
   Box,
-  Button,
   Card,
   CardContent,
   Checkbox,
-  FormControl,
-  FormLabel,
   Grid,
-  InputLabel,
-  MenuItem,
   Paper,
-  Select,
-  SelectChangeEvent,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
-  TextField,
   ToggleButton,
   ToggleButtonGroup,
   Typography,
@@ -42,6 +34,10 @@ import pondicherry from "../assets/pondicherry.svg";
 import maldives from "../assets/maldives.svg";
 import Image from "next/image";
 import { useState } from "react";
+import ScheduleConsultant from "../components/scheduleConsultant";
+
+import big_container from "../assets/big_container.svg";
+import CircleIcon from "@mui/icons-material/Circle";
 
 const Product = () => {
   const [productType, setProductType] = useState<
@@ -79,12 +75,6 @@ const Product = () => {
   } as const;
 
   const currentProduct = productTypeDetail[productType];
-
-  const [solutionType, setSolutionType] = useState("residential");
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setSolutionType(event.target.value as string);
-  };
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center">
@@ -191,9 +181,13 @@ const Product = () => {
               lineHeight: "34px",
               fontWeight: "400",
               color: "#444444",
-              width: "100%",height:"300px", borderRadius:"10px",marginRight:"5px",
+              width: "100%",
+              height: "300px",
+              borderRadius: "10px",
+              marginRight: "5px",
               maxWidth: "600px",
-              padding: "10px", backgroundColor:"#2DAF73"
+              padding: "10px",
+              backgroundColor: "#2DAF73",
             }}
           >
             {currentProduct.label}
@@ -204,8 +198,7 @@ const Product = () => {
             width={100}
             height={100}
             // style={{ width: "597px", maxHeight: "400px", borderRadius: "20px" }}
-          style={{ width: "300px", height: "300px", borderRadius: "20px" }}
-          
+            style={{ width: "300px", height: "300px", borderRadius: "20px" }}
           />
         </div>
       </div>
@@ -239,9 +232,11 @@ const Product = () => {
 
         <Box className="flex flex-col md:flex-row justify-center items-start p-10">
           <Image
-            src={whychooseus_container.src}
+            // src={whychooseus_container.src}
+            src={big_container.src}
             alt="container"
-            width={660}
+            // width={660}
+            width={770}
             height={660}
           />
           <Box className="flex flex-col justify-start items-start mt-5">
@@ -337,34 +332,44 @@ const Product = () => {
       {/* Custom BESS for */}
       <div className="w-full flex flex-col justify-center items-center mt-20 pl-10 pr-2">
         <Box className="w-full flex flex-col md:flex-row justify-between items-center p-10">
-          <Typography
-            sx={{
-              fontSize: "44px",
-              lineHeight: "70px",
-              fontWeight: "400",
-              color: "#33C481",
-              textAlign: "start",
-              minWidth: "400px",
-              maxWidth: "680px",
-              textTransform: "uppercase",
+          <div
+            style={{
+              // backgroundColor: "rgb(236, 179, 111)",
+              padding: "1rem",
+              borderRadius: "10px",
+              width: "100%",
             }}
           >
-            Custom BESS for
-            <br />
-            <span
-              style={{
+            <Typography
+              sx={{
                 fontSize: "44px",
                 lineHeight: "70px",
-                fontWeight: "700",
-                color: "#222222",
+                fontWeight: "400",
+                color: "#33C481",
+                // textAlign: "start",
+                // minWidth: "400px",
+                // maxWidth: "680px",
+                textTransform: "uppercase",
+                textAlign: "center",
               }}
             >
-              Solar & Wind
+              Custom BESS for
               <br />
-              Integration in India
-            </span>
-          </Typography>
-          <Typography
+              <span
+                style={{
+                  fontSize: "44px",
+                  lineHeight: "70px",
+                  fontWeight: "700",
+                  // color: "#222222",
+                  color: "rgb(236, 179, 111)",
+                }}
+              >
+                Solar & Wind Integration
+                {/* <br /> */}
+              </span>
+            </Typography>
+          </div>
+          {/* <Typography
             sx={{
               fontSize: "22px",
               lineHeight: "34px",
@@ -378,72 +383,85 @@ const Product = () => {
             to stabilize supply and maximize generation value. We help you
             combine solar PV and wind with energy storage to create resilient
             hybrid systems.
-          </Typography>
+          </Typography> */}
         </Box>
 
-        <Box className="w-full flex flex-col md:flex-row justify-between items-start p-10 ">
+        <Box className="w-full flex flex-col md:flex-row justify-between items-start p-10 gap-4">
           <Image
             src={custombess.src}
             alt="container"
             width={100}
             height={100}
-            style={{ width: "100%", maxWidth: "660px" }}
+            style={{ width: "50%", maxHeight: "350px" }}
           />
-          <Box className="flex flex-col justify-start items-start mt-5">
+          <Box
+            className="flex flex-col justify-start items-start p-10"
+            style={{
+              backgroundColor: "rgb(247, 217, 166)",
+              borderRadius: "10px",
+            }}
+          >
             <Typography
               sx={{
                 fontSize: "32px",
-                lineHeight: "70px",
+                // lineHeight: "50px",
                 fontWeight: "700",
-                color: "#222222",
+
+                color: "#33C481",
                 textTransform: "uppercase",
               }}
             >
-              Solar + Storage Benefits:
+              Solar + Storage{" "}
+              <span style={{ color: "#222222" }}>Benefits:</span>
             </Typography>
             <Typography
               sx={{
                 fontSize: "20px",
-                lineHeight: "100%",
+                // lineHeight: "50px",
                 fontWeight: "500",
                 color: "#444444",
-                padding: "30px",
+                padding: "10px 30px",
               }}
             >
+              <CircleIcon style={{ fontSize: "10px", marginRight: "5px" }} />
               Store excess solar power during the day
             </Typography>
             <Typography
               sx={{
                 fontSize: "20px",
-                lineHeight: "100%",
+                // lineHeight: "100%",
                 fontWeight: "500",
                 color: "#444444",
-                padding: "30px",
+                padding: "10px 30px",
               }}
             >
+              {" "}
+              <CircleIcon style={{ fontSize: "10px", marginRight: "5px" }} />
               Reduce reliance on diesel generators
             </Typography>
             <Typography
               sx={{
                 fontSize: "20px",
-                lineHeight: "100%",
+                // lineHeight: "100%",
                 fontWeight: "500",
                 color: "#444444",
-                padding: "30px",
+                padding: "10px 30px",
               }}
             >
+              <CircleIcon style={{ fontSize: "10px", marginRight: "5px" }} />
               Enable 24/7 energy availability in off-grid villages
             </Typography>
             <Typography
               sx={{
                 fontSize: "20px",
-                lineHeight: "100%",
+                // lineHeight: "100%",
                 fontWeight: "500",
                 color: "#444444",
-                padding: "30px",
+                padding: "10px 30px",
               }}
             >
-              Maximize net metering value for commercial rooftop systems
+              <CircleIcon style={{ fontSize: "10px", marginRight: "5px" }} />
+              Maximize net metering value for solar rooftop system
             </Typography>
           </Box>
         </Box>
@@ -474,10 +492,15 @@ const Product = () => {
             for Indian Sectors
           </span>
         </Typography>
-        <Paper elevation={6} sx={{ p: 2 }}>
+        <Paper elevation={6} sx={{ p: 2, marginTop: "2rem" }}>
           <Table sx={{ maxWidth: "820px" }}>
             <TableHead>
-              <TableRow>
+              <TableRow
+                sx={{
+                  backgroundColor: "rgb(245, 245, 245)",
+                  borderRadius: "50px",
+                }}
+              >
                 <TableCell
                   sx={{
                     fontSize: "20px",
@@ -501,14 +524,21 @@ const Product = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              <TableRow>
+              <TableRow
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#f7d9a6",
+                    cursor: "pointer",
+                  },
+                }}
+              >
                 <TableCell
                   sx={{
                     fontSize: "18px",
                     lineHeight: "30px",
                     fontWeight: "400",
                     color: "#444444",
-                    textTransform: "uppercase",
+                    // textTransform: "uppercase",
                   }}
                 >
                   Commercial Buildings
@@ -519,13 +549,20 @@ const Product = () => {
                     lineHeight: "30px",
                     fontWeight: "400",
                     color: "#444444",
-                    textTransform: "uppercase",
+                    // textTransform: "uppercase",
                   }}
                 >
                   Load shifting, diesel generator optimization
                 </TableCell>
               </TableRow>
-              <TableRow>
+              <TableRow
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#f7d9a6",
+                    cursor: "pointer",
+                  },
+                }}
+              >
                 <TableCell
                   sx={{
                     fontSize: "18px",
@@ -547,7 +584,14 @@ const Product = () => {
                   Peak shaving, power factor correction
                 </TableCell>
               </TableRow>
-              <TableRow>
+              <TableRow
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#f7d9a6",
+                    cursor: "pointer",
+                  },
+                }}
+              >
                 <TableCell
                   sx={{
                     fontSize: "18px",
@@ -591,7 +635,14 @@ const Product = () => {
                   Off-grid BESS with remote EMS
                 </TableCell>
               </TableRow>
-              <TableRow>
+              <TableRow
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#f7d9a6",
+                    cursor: "pointer",
+                  },
+                }}
+              >
                 <TableCell
                   sx={{
                     fontSize: "18px",
@@ -613,7 +664,14 @@ const Product = () => {
                   Grid-connected BESS for energy resilience
                 </TableCell>
               </TableRow>
-              <TableRow>
+              <TableRow
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#f7d9a6",
+                    cursor: "pointer",
+                  },
+                }}
+              >
                 <TableCell
                   sx={{
                     fontSize: "18px",
@@ -635,7 +693,14 @@ const Product = () => {
                   Frequency response, load balancing
                 </TableCell>
               </TableRow>
-              <TableRow>
+              <TableRow
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "#f7d9a6",
+                    cursor: "pointer",
+                  },
+                }}
+              >
                 <TableCell
                   sx={{
                     fontSize: "18px",
@@ -782,7 +847,7 @@ const Product = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          minHeight: "1000px",
+          minHeight: "500px",
           // padding: "8rem",
         }}
       >
@@ -791,7 +856,7 @@ const Product = () => {
           alt="whychooseus_container"
           width={100}
           height={100}
-          style={{ width: "100%", maxWidth: "600px", marginTop: "15rem" }}
+          style={{ width: "100%", maxWidth: "600px", marginTop: "9rem" }}
         />
         <Box style={{ width: "100%", marginTop: "5rem" }}>
           <Typography
@@ -800,11 +865,11 @@ const Product = () => {
               lineHeight: "70px",
               fontWeight: "900",
               color: "#222222",
-              marginBottom: "10rem",
+              marginBottom: "2rem",
               width: "100%",
             }}
           >
-            Why Choose Rebuffr?
+            Why Choose <span style={{color: "#33C481"}}>rebuffr </span>?
           </Typography>
 
           <Box
@@ -932,7 +997,7 @@ const Product = () => {
             color: "#444444",
           }}
         >
-          We&apos;ve deployed systems in
+          We&apos;ve deployed systems at
         </Typography>
 
         <Grid container spacing={2} sx={{ width: "100%", padding: "2rem" }}>
@@ -1106,155 +1171,7 @@ const Product = () => {
             </Typography>
           </Box>
           <Box className="w-full md:w-1/2">
-            <Grid container spacing={2}>
-              <Grid size={{ md: 6, sm: 12 }}>
-                <FormLabel
-                  required
-                  sx={{
-                    fontSize: "18px",
-                    lineHeight: "100%",
-                    fontWeight: "500",
-                  }}
-                >
-                  NAME
-                </FormLabel>
-                <TextField
-                  placeholder="Enter Name"
-                  variant="outlined"
-                  size="medium"
-                  sx={{
-                    width: "100%",
-                    fontSize: "18px",
-                    lineHeight: "100%",
-                    fontWeight: "500",
-                  }}
-                />
-              </Grid>
-              <Grid size={{ md: 6, sm: 12 }}>
-                <FormLabel
-                  required
-                  sx={{
-                    fontSize: "18px",
-                    lineHeight: "100%",
-                    fontWeight: "500",
-                  }}
-                >
-                  EMAIL ID
-                </FormLabel>
-                <TextField
-                  placeholder="Enter Email"
-                  variant="outlined"
-                  size="medium"
-                  sx={{
-                    width: "100%",
-                    fontSize: "18px",
-                    lineHeight: "100%",
-                    fontWeight: "500",
-                  }}
-                />
-              </Grid>
-              <Grid size={{ md: 6, sm: 12 }}>
-                <FormLabel
-                  required
-                  sx={{
-                    fontSize: "18px",
-                    lineHeight: "100%",
-                    fontWeight: "500",
-                  }}
-                >
-                  PHONE NUMBER
-                </FormLabel>
-                <TextField
-                  placeholder="Enter Phone Number"
-                  variant="outlined"
-                  size="medium"
-                  sx={{
-                    width: "100%",
-                    fontSize: "18px",
-                    lineHeight: "100%",
-                    fontWeight: "500",
-                  }}
-                />
-              </Grid>
-              <Grid size={{ md: 6, sm: 12 }}>
-                <FormControl fullWidth>
-                  <FormLabel
-                    required
-                    sx={{
-                      fontSize: "18px",
-                      lineHeight: "100%",
-                      fontWeight: "500",
-                    }}
-                  >
-                    Solution you are looking for
-                  </FormLabel>
-                  <InputLabel id="solution-type-label" required></InputLabel>
-                  <Select
-                    labelId="solution-type-label"
-                    id="demo-simple-select"
-                    value={solutionType}
-                    label="Solution"
-                    onChange={handleChange}
-                    sx={{
-                      width: "100%",
-                      fontSize: "18px",
-                      lineHeight: "100%",
-                      fontWeight: "500",
-                    }}
-                  >
-                    <MenuItem value="residential">Residential</MenuItem>
-                    <MenuItem value="commercial">Commercial</MenuItem>
-                    <MenuItem value="industrial">Industrial</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid size={12}>
-                <FormLabel
-                  required
-                  sx={{
-                    fontSize: "18px",
-                    lineHeight: "100%",
-                    fontWeight: "500",
-                  }}
-                >
-                  Leave a message for us
-                </FormLabel>
-                <TextField
-                  placeholder="Type Your Message"
-                  variant="outlined"
-                  size="medium"
-                  multiline
-                  rows={4}
-                  sx={{
-                    width: "100%",
-                    fontSize: "18px",
-                    lineHeight: "100%",
-                    fontWeight: "500",
-                  }}
-                />
-              </Grid>
-              <Box className="w-full flex justify-start items-center">
-                <Checkbox />
-                <Typography>
-                  I agree all the terms & Conditions & Privacy Policy
-                </Typography>
-              </Box>
-              <Button
-                sx={{
-                  fontSize: "18px",
-                  fontWeight: "700",
-                  color: "#ffffff",
-                  lineHeight: "20px",
-                  backgroundColor: "#33C481",
-                  padding: "18px 36px",
-                  borderRadius: "30px",
-                  cursor: "pointer",
-                  width: "fit-content",
-                }}
-              >
-                Schedule a Consultation
-              </Button>
-            </Grid>
+            <ScheduleConsultant />
           </Box>
         </Box>
       </div>

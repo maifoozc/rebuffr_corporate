@@ -35,15 +35,16 @@ const Header = () => {
         backgroundPosition: "center",
       }}
     >
-      <Image
-        src="https://i.ibb.co/34gkbYp/sz.png"
-        alt="logo"
-        width={184}
-        height={100}
-        priority
-        className="header_image cursor-pointer"
-      />
-
+      <Link href="/">
+        <Image
+          src="https://i.ibb.co/34gkbYp/sz.png"
+          alt="logo"
+          width={184}
+          height={100}
+          priority
+          className="header_image cursor-pointer"
+        />
+      </Link>
       <nav className="hidden md:flex gap-6 text-white font-medium">
         {navItems.map((item) => (
           <Link
@@ -67,7 +68,6 @@ const Header = () => {
           </Link>
         ))}
       </nav>
-
       <div className="md:hidden">
         <IconButton onClick={handleMenuOpen} sx={{ color: "white" }}>
           <MenuIcon />

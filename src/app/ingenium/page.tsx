@@ -123,17 +123,19 @@ const Ingenium = () => {
         <div
           style={{
             width: "100%",
-            maxWidth: "856px",
+            // maxWidth: "856px",
+            maxWidth:"600px",
             padding: "20px",
             marginTop: "1%",
           }}
         >
           <Typography
             sx={{
-              //   fontSize: "40px",
+                fontSize: "40px",
               lineHeight: "138%",
               fontWeight: "400",
-              color: "#33C481",
+              // color: "#33C481",
+                 color: "#ffffff",
             }}
             className="text-3xl md:text-4xl"
           >
@@ -141,10 +143,11 @@ const Ingenium = () => {
             <br />
             <span
               style={{
-                // fontSize: "60px",
-                lineHeight: "138%",
+                fontSize: "40px",
+                // lineHeight: "138%",
                 fontWeight: "900",
-                color: "#ffffff",
+                // color: "#ffffff",
+                 color: "#33C481",
               }}
               className="text-3xl md:text-6xl"
             >
@@ -181,13 +184,14 @@ const Ingenium = () => {
             real-time energy intelligence.
           </Typography>
         </div>
-        <div>
+        <div className="flex justify-center items-start">
           <Image
             src={monitor.src}
             alt="monitor"
             width={100}
             height={100}
-            style={{ width: "660px", height: "771px" }}
+            // style={{ width: "660px", height: "771px" }}
+                        style={{ width: "660px", height: "560px" }}
           />
         </div>
       </div>

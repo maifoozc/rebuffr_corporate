@@ -902,7 +902,7 @@ const AboutUs = () => {
                   textAlign: "center",
                 }}
               >
-                SCADA Enginner
+                System Engineer
               </Typography>
               <Box
                 sx={{
