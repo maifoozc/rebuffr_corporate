@@ -53,8 +53,10 @@ import nise from "./assets/nise.svg";
 import oilindia from "./assets/oilindia.svg";
 import Auroville_side_pose from "./assets/Auroville_side_pose.svg";
 import mundle_pasaydan from "./assets/mundle_pasaydan.svg";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   const sections = [
     {
       label: "MANUFACTURING & INDUSTRIAL UNITS",
@@ -163,6 +165,7 @@ export default function Home() {
                 marginTop: "40px",
                 width: "fit-content",
               }}
+              onClick={() => router.push("contact-us")}
             >
               LET&apos;S CONNECT
             </Button>
@@ -180,7 +183,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full flex justify-center items-center mt-10 bg-amber-700">
+      {/* Video */}
+      {/* <div className="w-full flex justify-center items-center mt-10 bg-amber-700">
         <video
           width="100%"
           height="auto"
@@ -193,7 +197,7 @@ export default function Home() {
           <source src="/previewVideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </div> */}
 
       {/* Powering Section */}
       <div className="w-full flex flex-col justify-center items-center mt-20">
@@ -422,6 +426,7 @@ export default function Home() {
               marginTop: "40px",
               width: "fit-content",
             }}
+            onClick={() => router.push("contact-us")}
           >
             LET&apos;S CONNECT
           </Button>
