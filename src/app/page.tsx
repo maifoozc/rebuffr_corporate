@@ -270,6 +270,7 @@ export default function Home() {
             cursor: "pointer",
             marginTop: "40px",
           }}
+          onClick={() => router.push("contact-us")}
         >
           READ MORE ABOUT US
         </Button>
@@ -824,7 +825,7 @@ export default function Home() {
               cursor: "pointer",
               marginTop: "40px",
               width: "fit-content",
-            }}
+            }}     onClick={() => router.push("contact-us")}
           >
             Request a custom quote
           </Button>

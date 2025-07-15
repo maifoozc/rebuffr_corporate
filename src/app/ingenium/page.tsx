@@ -38,8 +38,10 @@ import dgStorage from "../assets/dgStorage.svg";
 import builtBy from "../assets/builtBy.svg";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Ingenium = () => {
+  const router = useRouter();
   const ingeniumWorks = [
     {
       logo: dataAggregation.src,
@@ -1147,7 +1149,7 @@ const Ingenium = () => {
             borderRadius: "30px",
             cursor: "pointer",
             width: "fit-content",
-          }}
+          }}     onClick={() => router.push("contact-us")}
         >
           Schedule Now
         </Button>
