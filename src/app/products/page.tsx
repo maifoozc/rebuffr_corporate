@@ -11,17 +11,17 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  ToggleButton,
-  ToggleButtonGroup,
+  // ToggleButton,
+  // ToggleButtonGroup,
   Typography,
 } from "@mui/material";
 import product_bg from "../assets/product_bg.svg";
-import container_mirror from "../assets/container_mirror.svg";
-import mundle_container from "../assets/mundle_container.jpg";
-import prestige_container from "../assets/prestige_container.jpg";
-import auroville_container from "../assets/auroville_container.jpg";
+// import container_mirror from "../assets/container_mirror.svg";
+// import mundle_container from "../assets/mundle_container.jpg";
+// import prestige_container from "../assets/prestige_container.jpg";
+// import auroville_container from "../assets/auroville_container.jpg";
 import whychooseus_container from "../assets/whychooseus_container.svg";
-import custombess from "../assets/custombess.svg";
+// import custombess from "../assets/custombess.svg";
 import fastapi from "../assets/fastapi.svg";
 import fastapi_bg from "../assets/fastapi_bg.svg";
 import whychoose_product_text_bg from "../assets/whychoose_product_text_bg.svg";
@@ -30,57 +30,60 @@ import delhi from "../assets/delhi.svg";
 import maharashtra from "../assets/maharashtra.svg";
 import odisha from "../assets/odisha.svg";
 import tamil_nadu from "../assets/tamil_nadu.svg";
-import pondicherry from "../assets/pondicherry.svg";
+import pondicherry from "../assets/pondicherry.jpg";
 import maldives from "../assets/maldives.svg";
 import Image from "next/image";
-import { useState } from "react";
+// import { useState } from "react";
 import ScheduleConsultant from "../components/scheduleConsultant";
 
 import big_container from "../assets/big_container.svg";
 import CircleIcon from "@mui/icons-material/Circle";
 
+import product_container from "../assets/product_container.svg";
+import mundle_pasaydan from "../assets/mundle_pasaydan.svg";
+
 const Product = () => {
-  const [productType, setProductType] = useState<
-    "commercial" | "industrial" | "residential"
-  >("commercial");
+  // const [productType, setProductType] = useState<
+  //   "commercial" | "industrial" | "residential"
+  // >("commercial");
 
-  const productTypes: ("commercial" | "industrial" | "residential")[] = [
-    "commercial",
-    "industrial",
-    "residential",
-  ];
+  // const productTypes: ("commercial" | "industrial" | "residential")[] = [
+  //   "commercial",
+  //   "industrial",
+  //   "residential",
+  // ];
 
-  const handleProductTypeChange = (
-    event: React.MouseEvent<HTMLElement>,
-    newType: "commercial" | "industrial" | "residential" | null
-  ) => {
-    if (newType !== null) setProductType(newType);
-  };
+  // const handleProductTypeChange = (
+  //   event: React.MouseEvent<HTMLElement>,
+  //   newType: "commercial" | "industrial" | "residential" | null
+  // ) => {
+  //   if (newType !== null) setProductType(newType);
+  // };
 
-  const productTypeDetail = {
-    commercial: {
-      label:
-        "Commercial solutions for urban buildings, malls, and business parks.",
-      imagesrc: mundle_container.src,
-    },
-    industrial: {
-      label:
-        "Heavy-duty BESS solutions for manufacturing, processing, and plants.",
-      imagesrc: prestige_container.src,
-    },
-    residential: {
-      label: "Compact BESS units tailored for homes and housing societies.",
-      imagesrc: auroville_container.src,
-    },
-  } as const;
+  // const productTypeDetail = {
+  //   commercial: {
+  //     label:
+  //       "Commercial solutions for urban buildings, malls, and business parks.",
+  //     imagesrc: mundle_container.src,
+  //   },
+  //   industrial: {
+  //     label:
+  //       "Heavy-duty BESS solutions for manufacturing, processing, and plants.",
+  //     imagesrc: prestige_container.src,
+  //   },
+  //   residential: {
+  //     label: "Compact BESS units tailored for homes and housing societies.",
+  //     imagesrc: auroville_container.src,
+  //   },
+  // } as const;
 
-  const currentProduct = productTypeDetail[productType];
+  // const currentProduct = productTypeDetail[productType];
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center">
       {/* Empowering India’s Energy Transition  */}
       <div
-        className="w-full  flex flex-col md:flex-row justify-center items-start"
+        className="w-full min-h-screen  flex flex-col md:flex-row justify-center items-start pt-20"
         style={{
           backgroundImage: `url(${product_bg.src})`,
           backgroundSize: "cover",
@@ -93,7 +96,7 @@ const Product = () => {
             width: "100%",
             maxWidth: "856px",
             padding: "20px",
-            marginTop: "2%",
+            marginTop: "1%",
           }}
         >
           <Typography
@@ -136,17 +139,18 @@ const Product = () => {
         </div>
         <div>
           <Image
-            src={container_mirror.src}
+            // src={container_mirror.src}
+            src={product_container.src}
             alt="container_mirror"
             width={100}
             height={100}
-            style={{ width: "660px", height: "771px" }}
+            style={{ width: "660px", height: "auto",padding:"10px", borderRadius:"20px" }}
           />
         </div>
       </div>
 
       {/* product types */}
-      <div className="w-full  flex flex-col justify-center items-center mt-20 pl-10 pr-2">
+      {/* <div className="w-full  flex flex-col justify-center items-center mt-20 pl-10 pr-2">
         <ToggleButtonGroup
           value={productType}
           exclusive
@@ -201,7 +205,7 @@ const Product = () => {
             style={{ width: "300px", height: "300px", borderRadius: "20px" }}
           />
         </div>
-      </div>
+      </div> */}
 
       {/* Why Customized  */}
       <div className="w-full flex flex-col justify-center items-center mt-20 pl-10 pr-2">
@@ -211,7 +215,7 @@ const Product = () => {
             lineHeight: "70px",
             fontWeight: "400",
             color: "#33C481",
-            textAlign: "center",
+            textAlign: "center",textTransform:"uppercase"
           }}
         >
           Why Customized
@@ -386,13 +390,14 @@ const Product = () => {
           </Typography> */}
         </Box>
 
-        <Box className="w-full flex flex-col md:flex-row justify-between items-start p-10 gap-4">
+        <Box className="w-full flex flex-col md:flex-row justify-center items-start p-10 gap-4">
           <Image
-            src={custombess.src}
-            alt="container"
+            // src={custombess.src}
+            src={mundle_pasaydan.src}
+            alt="container_solar"
             width={100}
             height={100}
-            style={{ width: "50%", maxHeight: "350px" }}
+            style={{ width: "440px",  borderRadius:"20px"  }}
           />
           <Box
             className="flex flex-col justify-start items-start p-10"
@@ -475,7 +480,7 @@ const Product = () => {
             lineHeight: "70px",
             fontWeight: "900",
             color: "#222222",
-            textAlign: "center",
+            textAlign: "center", textTransform:"uppercase"
           }}
         >
           Customized BESS Solutions
@@ -744,7 +749,7 @@ const Product = () => {
               fontSize: "48px",
               lineHeight: "70px",
               fontWeight: "900",
-              color: "#222222",
+              color: "#222222", textTransform:"uppercase"
             }}
           >
             Fast Deployment &{" "}
@@ -866,7 +871,7 @@ const Product = () => {
               fontWeight: "900",
               color: "#222222",
               marginBottom: "2rem",
-              width: "100%",
+              width: "100%", textTransform:"uppercase"
             }}
           >
             Why Choose <span style={{color: "#33C481"}}>rebuffr </span>?
@@ -969,7 +974,7 @@ const Product = () => {
             fontSize: "44px",
             lineHeight: "70px",
             fontWeight: "400",
-            color: "#222222",
+            color: "#222222", textTransform:"uppercase"
           }}
         >
           Projects{" "}
@@ -1001,6 +1006,23 @@ const Product = () => {
         </Typography>
 
         <Grid container spacing={2} sx={{ width: "100%", padding: "2rem" }}>
+          <Grid size={{ xs: 12, sm: 12, md: 4 }}>
+            <Card
+              style={{
+                backgroundImage: `url(${maldives.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                height: "320px",
+                borderRadius: "20px",
+              }}
+              className="flex justify-start items-end"
+            >
+              <CardContent className="flex justify-start items-end text-white">
+                <Typography>Maldives</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
           <Grid size={{ xs: 12, sm: 12, md: 4 }}>
             <Card
               style={{
@@ -1055,23 +1077,7 @@ const Product = () => {
             </Card>
           </Grid>
 
-          <Grid size={{ xs: 12, sm: 12, md: 4 }}>
-            <Card
-              style={{
-                backgroundImage: `url(${maldives.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                height: "320px",
-                borderRadius: "20px",
-              }}
-              className="flex justify-start items-end"
-            >
-              <CardContent className="flex justify-start items-end text-white">
-                <Typography>Maldives</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+          
 
           <Grid size={{ xs: 12, sm: 12, md: 4 }}>
             <Card

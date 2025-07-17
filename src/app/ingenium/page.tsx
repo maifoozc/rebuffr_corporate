@@ -206,7 +206,7 @@ const Ingenium = () => {
             lineHeight: "70px",
             fontWeight: "900",
             color: "#222222",
-            textAlign: "center",
+            textAlign: "center", textTransform:"uppercase"
           }}
         >
           What Ingenium Does
@@ -974,7 +974,7 @@ const Ingenium = () => {
                     height={24}
                     style={{ marginRight: "10px" }}
                   />{" "}
-                  2x with smart cycling
+                  1.1x with smart cycling
                 </TableCell>
               </TableRow>
               <TableRow>
@@ -1004,7 +1004,7 @@ const Ingenium = () => {
                     height={24}
                     style={{ marginRight: "10px" }}
                   />{" "}
-                  Accelerated by 1.5x
+                  Accelerated by 1.1x
                 </TableCell>
               </TableRow>
             </TableBody>

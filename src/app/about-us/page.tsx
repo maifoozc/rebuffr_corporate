@@ -29,10 +29,13 @@ import fullstack from "../assets/fullstack.svg";
 import inhouse from "../assets/inhouse.svg";
 import ourclient from "../assets/ourclient.svg";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import XIcon from "@mui/icons-material/X";
+// import XIcon from "@mui/icons-material/X";
 import vision from "../assets/vision.svg";
-import http from "../assets/http.svg";
-import building from "../assets/building.svg";
+// import http from "../assets/http.svg";
+// import building from "../assets/building.svg";
+import LanguageIcon from "@mui/icons-material/Language";
+import BusinessIcon from "@mui/icons-material/Business";
+import software_engineer from "../assets/software_engineer.png";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -227,9 +230,10 @@ const AboutUs = () => {
             lineHeight: "70px",
             fontWeight: "900",
             color: "#222222",
+            textTransform: "uppercase",
           }}
         >
-          What we do
+          <span style={{ color: "#33C481" }}>What</span> we do
         </Typography>
         <Typography
           sx={{
@@ -514,7 +518,7 @@ const AboutUs = () => {
             textTransform: "uppercase",
           }}
         >
-          Our Capabilities
+          Our <span style={{ color: "#33C481" }}>Capabilities</span>
         </Typography>
 
         <Box sx={{ position: "relative", marginTop: "20px" }}>
@@ -739,7 +743,7 @@ const AboutUs = () => {
           <Card>
             <CardContent>
               <Image
-                src="https://picsum.photos/seed/picsum/200/300"
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgGCgkGBwoHBwYGBg8UFQYWIB0WIhURHxMYHSggGBolGx8fITEhJSkrLi4uFx8zODMsNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAMgAyAMBIgACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAAAwQFAgEH/8QANBABAQACAAMGAgYLAQAAAAAAAAIBAwQREiEiMTJSYhNyBTNTgqHBI0FCUWFxgZGSk7EU/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD6oAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8qpic1WcYmfNVM/fxV3nOIzmY/GwXNvEa9XZVc6+znxVb4+s57kTj5u1UAWP/bu/fH+t1PHbMeM6s/d5KoC/HHRnzxc/L2rWM4zjGceFMZJp33pz3c85+zrwBrDjVsnbGKn70+h2AAAAAAAAAAAAAAABnPLGc58J7wM/j9ma2/D59kT5f4qr26zV5rPjVdTxQAAAAABZ4C8zu6OfZctFkaKzO/XnHrlroAAAAAAAAAAAAAACPfnlo2fJSRHvxz0bMeygZICgAAAAADqM9NzXpqabDFbWPBAAAAAAAAAAAAAAARb9k69ec3z5V3e6lVuPxz0Yz6bkGcAoAAAAAA9xy545+DW1XOyMXPVyr1Mhp8Hjlw8e7qr8UE4AAAAAAAAAAAAACHip6+HvHpnq/smeVOKnM58KnpoGMJeI0fAqcdXVivL3USgAAAAAA19U9GqJ9MqHDcN8bHVnPKZr/JpIAAAAAAAAAAAAAAAAKv0hHVqm8fsV/wBZ7ZqcXOZrwqemmTu151bMxnt6fLXqwDgBQAABJw+v4u3E58vmr+QL/CR0aJxnxr9JX9U4IAAAAAAAAAAAAAAAADP+kfrp+T8167iJ53Uzj3MzitmNu3qnyzPTIIgFAABa+jvrq+T81VNwuzGrdiq8tT00DUHMXFzzisVj2ukAAAAAAAAAAAAAEezdr1+e5xn0z25BI52XGueq6xjClt47OeeNU8vdStV1ddVVnOfVQGy6u81Wc573d6nIKAAAAAAOtd1F4qc5x3u90tbXcbJ6orGcMd1N1FdU1nGfVKDYFDVx2ccsbZ5+6VvXu17PJc5z6a7MgkAAAAAABDxO74Mc8dt13YkHW3dGrHO6+WZ8aVL4+s/VxOPds7VWqq6zVZznNeaqeAkviNt+a88vTPYjBQAAAAAAAAAAAAABJHEbY8t55emu1PHH1j6yJz7tfYqANbVujbjnFfNNeMpGNNVFYqc5xmfLUtPht3xo557Lnu3KCYABm8dWa35x+qJmQBXAUAAAAAAAAAAAAAAAAAAFjgazO/GP1XNSCDSAB//Z"
                 alt=""
                 width={200}
                 height={200}
@@ -775,16 +779,16 @@ const AboutUs = () => {
                 <IconButton>
                   <LinkedInIcon sx={{ color: "#000000" }} />
                 </IconButton>
-                <IconButton>
+                {/* <IconButton>
                   <XIcon sx={{ color: "#000000" }} />
-                </IconButton>
+                </IconButton> */}
               </Box>
             </CardContent>
           </Card>
           <Card>
             <CardContent>
               <Image
-                src="https://picsum.photos/seed/picsum/200/300"
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgGCgkGBwoHBwYGBg8UFQYWIB0WIhURHxMYHSggGBolGx8fITEhJSkrLi4uFx8zODMsNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAMgAyAMBIgACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAAAwQFAgEH/8QANBABAQACAAMGAgYLAQAAAAAAAAIBAwQREiEiMTJSYhNyBTNTgqHBI0FCUWFxgZGSk7EU/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD6oAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8qpic1WcYmfNVM/fxV3nOIzmY/GwXNvEa9XZVc6+znxVb4+s57kTj5u1UAWP/bu/fH+t1PHbMeM6s/d5KoC/HHRnzxc/L2rWM4zjGceFMZJp33pz3c85+zrwBrDjVsnbGKn70+h2AAAAAAAAAAAAAAABnPLGc58J7wM/j9ma2/D59kT5f4qr26zV5rPjVdTxQAAAAABZ4C8zu6OfZctFkaKzO/XnHrlroAAAAAAAAAAAAAACPfnlo2fJSRHvxz0bMeygZICgAAAAADqM9NzXpqabDFbWPBAAAAAAAAAAAAAAARb9k69ec3z5V3e6lVuPxz0Yz6bkGcAoAAAAAA9xy545+DW1XOyMXPVyr1Mhp8Hjlw8e7qr8UE4AAAAAAAAAAAAACHip6+HvHpnq/smeVOKnM58KnpoGMJeI0fAqcdXVivL3USgAAAAAA19U9GqJ9MqHDcN8bHVnPKZr/JpIAAAAAAAAAAAAAAAAKv0hHVqm8fsV/wBZ7ZqcXOZrwqemmTu151bMxnt6fLXqwDgBQAABJw+v4u3E58vmr+QL/CR0aJxnxr9JX9U4IAAAAAAAAAAAAAAAADP+kfrp+T8167iJ53Uzj3MzitmNu3qnyzPTIIgFAABa+jvrq+T81VNwuzGrdiq8tT00DUHMXFzzisVj2ukAAAAAAAAAAAAAEezdr1+e5xn0z25BI52XGueq6xjClt47OeeNU8vdStV1ddVVnOfVQGy6u81Wc573d6nIKAAAAAAOtd1F4qc5x3u90tbXcbJ6orGcMd1N1FdU1nGfVKDYFDVx2ccsbZ5+6VvXu17PJc5z6a7MgkAAAAAABDxO74Mc8dt13YkHW3dGrHO6+WZ8aVL4+s/VxOPds7VWqq6zVZznNeaqeAkviNt+a88vTPYjBQAAAAAAAAAAAAABJHEbY8t55emu1PHH1j6yJz7tfYqANbVujbjnFfNNeMpGNNVFYqc5xmfLUtPht3xo557Lnu3KCYABm8dWa35x+qJmQBXAUAAAAAAAAAAAAAAAAAAFjgazO/GP1XNSCDSAB//Z"
                 alt=""
                 width={200}
                 height={200}
@@ -820,19 +824,19 @@ const AboutUs = () => {
                 <IconButton>
                   <LinkedInIcon sx={{ color: "#000000" }} />
                 </IconButton>
-                <IconButton>
+                {/* <IconButton>
                   <XIcon sx={{ color: "#000000" }} />
-                </IconButton>
+                </IconButton> */}
               </Box>
             </CardContent>
           </Card>
           <Card>
             <CardContent>
               <Image
-                src="https://picsum.photos/seed/picsum/200/300"
-                alt=""
-                width={200}
-                height={200}
+                src={software_engineer.src}
+                alt="maifooz sheikh"
+                width={150}
+                height={150}
               />
               <Typography
                 sx={{
@@ -868,16 +872,16 @@ const AboutUs = () => {
                 >
                   <LinkedInIcon sx={{ color: "#000000" }} />
                 </IconButton>
-                <IconButton>
+                {/* <IconButton>
                   <XIcon sx={{ color: "#000000" }} />
-                </IconButton>
+                </IconButton> */}
               </Box>
             </CardContent>
           </Card>
           <Card>
             <CardContent>
               <Image
-                src="https://picsum.photos/seed/picsum/200/300"
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgGCgkGBwoHBwYGBg8UFQYWIB0WIhURHxMYHSggGBolGx8fITEhJSkrLi4uFx8zODMsNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAMgAyAMBIgACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAAAwQFAgEH/8QANBABAQACAAMGAgYLAQAAAAAAAAIBAwQREiEiMTJSYhNyBTNTgqHBI0FCUWFxgZGSk7EU/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD6oAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8qpic1WcYmfNVM/fxV3nOIzmY/GwXNvEa9XZVc6+znxVb4+s57kTj5u1UAWP/bu/fH+t1PHbMeM6s/d5KoC/HHRnzxc/L2rWM4zjGceFMZJp33pz3c85+zrwBrDjVsnbGKn70+h2AAAAAAAAAAAAAAABnPLGc58J7wM/j9ma2/D59kT5f4qr26zV5rPjVdTxQAAAAABZ4C8zu6OfZctFkaKzO/XnHrlroAAAAAAAAAAAAAACPfnlo2fJSRHvxz0bMeygZICgAAAAADqM9NzXpqabDFbWPBAAAAAAAAAAAAAAARb9k69ec3z5V3e6lVuPxz0Yz6bkGcAoAAAAAA9xy545+DW1XOyMXPVyr1Mhp8Hjlw8e7qr8UE4AAAAAAAAAAAAACHip6+HvHpnq/smeVOKnM58KnpoGMJeI0fAqcdXVivL3USgAAAAAA19U9GqJ9MqHDcN8bHVnPKZr/JpIAAAAAAAAAAAAAAAAKv0hHVqm8fsV/wBZ7ZqcXOZrwqemmTu151bMxnt6fLXqwDgBQAABJw+v4u3E58vmr+QL/CR0aJxnxr9JX9U4IAAAAAAAAAAAAAAAADP+kfrp+T8167iJ53Uzj3MzitmNu3qnyzPTIIgFAABa+jvrq+T81VNwuzGrdiq8tT00DUHMXFzzisVj2ukAAAAAAAAAAAAAEezdr1+e5xn0z25BI52XGueq6xjClt47OeeNU8vdStV1ddVVnOfVQGy6u81Wc573d6nIKAAAAAAOtd1F4qc5x3u90tbXcbJ6orGcMd1N1FdU1nGfVKDYFDVx2ccsbZ5+6VvXu17PJc5z6a7MgkAAAAAABDxO74Mc8dt13YkHW3dGrHO6+WZ8aVL4+s/VxOPds7VWqq6zVZznNeaqeAkviNt+a88vTPYjBQAAAAAAAAAAAAABJHEbY8t55emu1PHH1j6yJz7tfYqANbVujbjnFfNNeMpGNNVFYqc5xmfLUtPht3xo557Lnu3KCYABm8dWa35x+qJmQBXAUAAAAAAAAAAAAAAAAAAFjgazO/GP1XNSCDSAB//Z"
                 alt=""
                 width={200}
                 height={200}
@@ -913,9 +917,9 @@ const AboutUs = () => {
                 <IconButton>
                   <LinkedInIcon sx={{ color: "#000000" }} />
                 </IconButton>
-                <IconButton>
+                {/* <IconButton>
                   <XIcon sx={{ color: "#000000" }} />
-                </IconButton>
+                </IconButton> */}
               </Box>
             </CardContent>
           </Card>
@@ -984,7 +988,8 @@ const AboutUs = () => {
         </Typography>
         <Box className="flex flex-col md:flex-row justify-center items-start md:items-center gap-10  mt-20 mb-20">
           <Box className="flex flex-row gap-x-5 ">
-            <Image src={http} alt="" width={60} height={60} />
+            {/* <Image src={http} alt="" width={60} height={60} /> */}
+            <LanguageIcon sx={{ fontSize: "65px", color: "#000000" }} />
             <Box>
               <Typography
                 sx={{
@@ -1010,7 +1015,8 @@ const AboutUs = () => {
           </Box>
 
           <Box className="flex flex-row gap-x-5 ">
-            <Image src={building.src} alt="" width={60} height={60} />
+            {/* <Image src={building.src} alt="" width={60} height={60} /> */}
+            <BusinessIcon sx={{ fontSize: "65px", color: "#000000" }} />
             <Box>
               <Typography
                 sx={{
@@ -1022,8 +1028,7 @@ const AboutUs = () => {
               >
                 Rebuffr Systems Pvt. Ltd.
                 <br />
-                301, Mont Vert Apex, Baner, Pune - 411045, <br />
-                Maharashtra, India
+                301, Mont Vert Apex, Baner, Pune - 411045, Maharashtra, India
               </Typography>
             </Box>
           </Box>

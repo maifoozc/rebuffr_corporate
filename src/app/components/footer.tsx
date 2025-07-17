@@ -3,13 +3,16 @@ import Image from "next/image";
 import footer_background from "../assets/footer_background.svg";
 import Grid from "@mui/material/Grid";
 import { Box, Button, IconButton, Typography } from "@mui/material";
-import email_logo from "../assets/email_logo.svg";
-import telephone from "../assets/telephone.svg";
-import building from "../assets/building.svg";
+// import email_logo from "../assets/email_logo.svg";
+// import telephone from "../assets/telephone.svg";
+// import building from "../assets/building.svg";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 // import FacebookIcon from "@mui/icons-material/Facebook";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+// import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import MailIcon from '@mui/icons-material/Mail';
+import BusinessIcon from '@mui/icons-material/Business';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -61,7 +64,7 @@ const Footer = () => {
               >
                 <FacebookIcon />
               </IconButton> */}
-              <IconButton
+              {/* <IconButton
                 sx={{
                   // width: "50px",
                   // height: "50px",
@@ -75,7 +78,7 @@ const Footer = () => {
                     height: "50px",
                   }}
                 />
-              </IconButton>
+              </IconButton> */}
               <IconButton
                 sx={{
                   // width: "50px",
@@ -101,14 +104,15 @@ const Footer = () => {
             className="flex justify-center items-center"
           >
             <div className="flex flex-row  justify-start items-center gap-2 text-white">
-              <Image
+              {/* <Image
                 src={email_logo.src}
                 alt="logo"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <MailIcon sx={{fontSize:"65px"}}/>
               <div>
                 <Typography
                   sx={{
@@ -137,14 +141,15 @@ const Footer = () => {
             className="flex justify-center items-center "
           >
             <div className="flex flex-row  justify-start items-center gap-2 text-white">
-              <Image
+              {/* <Image
                 src={telephone.src}
                 alt="telephone"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <ContactPhoneIcon sx={{fontSize:"65px"}}/>
               <div>
                 <Typography
                   sx={{
@@ -173,18 +178,19 @@ const Footer = () => {
             className="flex justify-start items-center"
           >
             <div className="flex flex-row  justify-start items-center gap-2 text-white">
-              <Image
+              {/* <Image
                 src={building.src}
                 alt="building"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <BusinessIcon sx={{fontSize:"65px"}}/>
               <div>
                 <Typography
                   sx={{
-                    fontSize: "24px",
+                    fontSize: "20px",
                     lineHeight: "30px",
                     fontWeight: "700",
                   }}

@@ -1,14 +1,22 @@
 import { Grid, Typography } from "@mui/material";
 import ScheduleConsultant from "../components/scheduleConsultant";
-import email_logo from "../assets/email_logo.svg";
-import telephone from "../assets/telephone.svg";
-import building from "../assets/building.svg";
-import workingHour from "../assets/workingHour.svg";
-import Image from "next/image";
+// import email_logo from "../assets/email_logo.svg";
+// import telephone from "../assets/telephone.svg";
+// import building from "../assets/building.svg";
+// import workingHour from "../assets/workingHour.svg";
+// import Image from "next/image";
 import MyMapComponent from "../components/map";
-import linkedin from "../assets/linkedin.svg";
-import blogs from "../assets/blogs.svg";
-import website from "../assets/website.svg";
+// import linkedin from "../assets/linkedin.svg";
+// import blogs from "../assets/blogs.svg";
+// import website from "../assets/website.svg";
+
+import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
+import MailIcon from "@mui/icons-material/Mail";
+import BusinessIcon from "@mui/icons-material/Business";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { LinkedIn } from "@mui/icons-material";
+import BookIcon from "@mui/icons-material/Book";
+import LanguageIcon from "@mui/icons-material/Language";
 
 const ContactUs = () => {
   return (
@@ -69,14 +77,15 @@ const ContactUs = () => {
             className="flex justify-start items-center"
           >
             <div className="flex flex-row  justify-start items-center gap-2">
-              <Image
+              {/* <Image
                 src={building.src}
                 alt="building"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <BusinessIcon sx={{ fontSize: "65px" }} />
               <div>
                 <Typography
                   sx={{
@@ -107,14 +116,15 @@ const ContactUs = () => {
             className="flex justify-start items-center"
           >
             <div className="flex flex-row  justify-start items-center gap-2">
-              <Image
+              {/* <Image
                 src={workingHour.src}
                 alt="workingHour"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <AccessTimeIcon sx={{ fontSize: "65px" }} />
               <div>
                 <Typography
                   sx={{
@@ -147,14 +157,15 @@ const ContactUs = () => {
             className="flex justify-start items-center"
           >
             <div className="flex flex-row  justify-start items-center gap-2">
-              <Image
+              {/* <Image
                 src={email_logo.src}
                 alt="logo"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <MailIcon sx={{ fontSize: "65px" }} />
               <div>
                 <Typography
                   sx={{
@@ -185,14 +196,15 @@ const ContactUs = () => {
             className="flex justify-start items-center "
           >
             <div className="flex flex-row  justify-start items-center gap-2">
-              <Image
+              {/* <Image
                 src={telephone.src}
                 alt="telephone"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <ContactPhoneIcon sx={{ fontSize: "65px" }} />
               <div>
                 <Typography
                   sx={{
@@ -260,14 +272,15 @@ const ContactUs = () => {
             className="flex justify-center items-center"
           >
             <div className="flex flex-row  justify-start items-center gap-2">
-              <Image
+              {/* <Image
                 src={linkedin.src}
                 alt="linkedin"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <LinkedIn style={{ fontSize: "65px" }} />
 
               <div>
                 <Typography
@@ -300,14 +313,15 @@ const ContactUs = () => {
             className="flex flex-col md:flex-row justify-between items-start"
           >
             <div className="flex flex-row  justify-center items-center gap-2 pb-10">
-              <Image
+              {/* <Image
                 src={blogs.src}
                 alt="blogs"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <BookIcon style={{ fontSize: "65px" }} />
 
               <div>
                 <Typography
@@ -333,14 +347,15 @@ const ContactUs = () => {
               </div>
             </div>
             <div className="flex flex-row  justify-center items-center gap-2">
-              <Image
+              {/* <Image
                 src={website.src}
                 alt="website"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <LanguageIcon style={{ fontSize: "65px" }} />
 
               <div>
                 <Typography
@@ -351,7 +366,7 @@ const ContactUs = () => {
                     color: "#333333",
                   }}
                 >
-                  LinkedIn
+                  Website
                 </Typography>
                 <Typography
                   sx={{
@@ -404,14 +419,15 @@ const ContactUs = () => {
             className="flex justify-center items-center"
           >
             <div className="flex flex-row  justify-start items-center gap-2">
-              <Image
+              {/* <Image
                 src={email_logo.src}
                 alt="logo"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <MailIcon style={{ fontSize: "65px" }} />
               <div>
                 <Typography
                   sx={{
@@ -441,14 +457,15 @@ const ContactUs = () => {
             className="flex justify-start items-center"
           >
             <div className="flex flex-row  justify-start items-center gap-2">
-              <Image
+              {/* <Image
                 src={workingHour.src}
                 alt="workingHour"
                 width={50}
                 height={50}
                 priority
                 className="header_image cursor-pointer"
-              />
+              /> */}
+              <AccessTimeIcon style={{ fontSize: "65px" }} />
               <div>
                 <Typography
                   sx={{

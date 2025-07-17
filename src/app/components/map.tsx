@@ -62,8 +62,8 @@ export default function MapComponent() {
         style={{ height: "100%", width: "100%" }}
       >
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; OpenStreetMap contributors"
+          url="https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
+          attribution='&copy; <a href="https://maps.google.com/">Google Maps</a>'
         />
         <Marker position={center} icon={defaultIcon}>
           <Popup>Your location</Popup>
