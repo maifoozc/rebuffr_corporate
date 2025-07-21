@@ -37,6 +37,8 @@ import LanguageIcon from "@mui/icons-material/Language";
 import BusinessIcon from "@mui/icons-material/Business";
 // import software_engineer from "../assets/software_engineer.png";
 
+import FactoryIcon from "@mui/icons-material/Factory";
+
 import Image from "next/image";
 import { useState } from "react";
 
@@ -957,7 +959,6 @@ const AboutUs = () => {
               </Box>
             </CardContent>
           </Card> */}
-          
         </Box>
       </div>
 
@@ -1050,6 +1051,27 @@ const AboutUs = () => {
           </Box>
 
           <Box className="flex flex-row gap-x-5 ">
+            <FactoryIcon sx={{ fontSize: "65px", color: "#000000" }} />
+            <Box>
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  lineHeight: "30px",
+                  fontWeight: "400",
+                  color: "#333333",
+                }}
+              >
+                Manufacturing Facility
+                <br />
+                Chakan, Pune, Maharashtra, India
+              </Typography>
+            </Box>
+          </Box>
+
+          
+        </Box>
+
+      <Box className="flex flex-row gap-x-5 ">
             {/* <Image src={building.src} alt="" width={60} height={60} /> */}
             <BusinessIcon sx={{ fontSize: "65px", color: "#000000" }} />
             <Box>
@@ -1067,7 +1089,6 @@ const AboutUs = () => {
               </Typography>
             </Box>
           </Box>
-        </Box>
       </div>
     </div>
   );

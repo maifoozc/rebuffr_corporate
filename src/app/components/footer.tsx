@@ -231,7 +231,7 @@ const Footer = () => {
             textAlign: "center",
           }}
         >
-          © Copyrights 2025 rebuffr All rights reserved .
+          © 2025 Rebuffr. All rights reserved.
         </Typography>
         <div className="w-full flex justify-end items-center">
           <Button
