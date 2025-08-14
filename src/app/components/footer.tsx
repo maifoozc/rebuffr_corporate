@@ -167,7 +167,7 @@ const Footer = () => {
                     fontWeight: "400",
                   }}
                 >
-                  +91-76876564563
+                  +91-9579388441
                 </Typography>
               </div>
             </div>
