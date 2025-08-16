@@ -20,12 +20,14 @@ import product_bg from "../assets/product_bg.svg";
 // import mundle_container from "../assets/mundle_container.jpg";
 // import prestige_container from "../assets/prestige_container.jpg";
 // import auroville_container from "../assets/auroville_container.jpg";
-import whychooseus_container from "../assets/whychooseus_container.svg";
+// import whychooseus_container from "../assets/whychooseus_container.svg";
 // import custombess from "../assets/custombess.svg";
 import fastapi from "../assets/fastapi.svg";
 import fastapi_bg from "../assets/fastapi_bg.svg";
-import whychoose_product_text_bg from "../assets/whychoose_product_text_bg.svg";
+import product_why_choose_us from "../assets/product_why_choose_us.svg";
 import whychoose_product_bg from "../assets/whychoose_product_bg.svg";
+import thermal_management from "../assets/thermal_management.svg";
+
 import delhi from "../assets/delhi.svg";
 import maharashtra from "../assets/maharashtra.svg";
 import odisha from "../assets/odisha.svg";
@@ -144,7 +146,12 @@ const Product = () => {
             alt="container_mirror"
             width={100}
             height={100}
-            style={{ width: "660px", height: "auto",padding:"10px", borderRadius:"20px" }}
+            style={{
+              width: "660px",
+              height: "auto",
+              padding: "10px",
+              borderRadius: "20px",
+            }}
           />
         </div>
       </div>
@@ -215,7 +222,8 @@ const Product = () => {
             lineHeight: "70px",
             fontWeight: "400",
             color: "#33C481",
-            textAlign: "center",textTransform:"uppercase"
+            textAlign: "center",
+            textTransform: "uppercase",
           }}
         >
           Why Customized
@@ -397,7 +405,7 @@ const Product = () => {
             alt="container_solar"
             width={100}
             height={100}
-            style={{ width: "440px",  borderRadius:"20px"  }}
+            style={{ width: "440px", borderRadius: "20px" }}
           />
           <Box
             className="flex flex-col justify-start items-start p-10"
@@ -480,7 +488,8 @@ const Product = () => {
             lineHeight: "70px",
             fontWeight: "900",
             color: "#222222",
-            textAlign: "center", textTransform:"uppercase"
+            textAlign: "center",
+            textTransform: "uppercase",
           }}
         >
           Customized BESS Solutions
@@ -749,7 +758,8 @@ const Product = () => {
               fontSize: "48px",
               lineHeight: "70px",
               fontWeight: "900",
-              color: "#222222", textTransform:"uppercase"
+              color: "#222222",
+              textTransform: "uppercase",
             }}
           >
             Fast Deployment &{" "}
@@ -857,11 +867,16 @@ const Product = () => {
         }}
       >
         <Image
-          src={whychooseus_container.src}
+          src={product_why_choose_us.src}
           alt="whychooseus_container"
           width={100}
           height={100}
-          style={{ width: "100%", maxWidth: "600px", marginTop: "9rem" }}
+          style={{
+            width: "100%",
+            maxWidth: "600px",
+            marginTop: "5rem",
+            borderRadius: "20px",
+          }}
         />
         <Box style={{ width: "100%", marginTop: "5rem" }}>
           <Typography
@@ -871,13 +886,41 @@ const Product = () => {
               fontWeight: "900",
               color: "#222222",
               marginBottom: "2rem",
-              width: "100%", textTransform:"uppercase"
+              width: "100%",
+              textTransform: "uppercase",
             }}
           >
-            Why Choose <span style={{color: "#33C481"}}>rebuffr </span>?
+            Why Choose <span style={{ color: "#33C481" }}>rebuffr </span>?
           </Typography>
 
-          <Box
+          {[
+            "India-specific customization for every solution",
+            "Global technology with local adaptation and tailor-made energy management services.",
+            "Expertise in solar battery storage solutions in India",
+            "AI-powered smart energy management system tailored to Indian consumption patterns.",
+          ].map((text, index) => (
+            <Typography
+              key={index}
+              sx={{
+                fontSize: "18px",
+                lineHeight: "100%",
+                fontWeight: "500",
+                color: "#444444",
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "0.5rem",
+              }}
+            >
+              <Checkbox
+                disabled
+                checked
+                sx={{ "&.Mui-checked": { color: "#33C481" } }}
+              />
+              {text}
+            </Typography>
+          ))}
+
+          {/* <Box
             className="flex justify-center items-center p-6 m-2"
             style={{
               backgroundImage: `url(${whychoose_product_text_bg.src})`,
@@ -963,8 +1006,56 @@ const Product = () => {
               <br />
               Indian consumption patterns.  
             </Typography>
-          </Box>
+          </Box> */}
         </Box>
+      </div>
+
+      {/* Thermal Management */}
+      <div className="w-full flex flex-col  justify-center items-center mt-20 md:pl-10 md:pr-2 gap-x-10">
+        <Typography
+          sx={{
+            fontSize: "44px",
+            lineHeight: "70px",
+            fontWeight: "400",
+            color: "#222222",
+            textTransform: "uppercase",
+          }}
+        >
+          In house{" "}
+          <span
+            style={{
+              fontWeight: "900",
+            }}
+          >
+            Thermal Management{" "}
+          </span>
+          <span
+            style={{
+              fontWeight: "900",
+              color: "#33C481",
+            }}
+          >
+            system
+          </span>
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: "22px",
+            lineHeight: "34px",
+            fontWeight: "500",
+            color: "#444444",
+          }}
+        >
+          Design and flow simulation for air-cooled battery systems
+        </Typography>
+
+        <Image
+          src={thermal_management.src}
+          alt="thermal_management"
+          width={100}
+          height={100}
+          style={{ width: "100%", maxWidth: "630px", marginTop: "2rem" }}
+        />
       </div>
 
       {/* Projects Across Globe */}
@@ -974,7 +1065,8 @@ const Product = () => {
             fontSize: "44px",
             lineHeight: "70px",
             fontWeight: "400",
-            color: "#222222", textTransform:"uppercase"
+            color: "#222222",
+            textTransform: "uppercase",
           }}
         >
           Projects{" "}
@@ -1076,8 +1168,6 @@ const Product = () => {
               </CardContent>
             </Card>
           </Grid>
-
-          
 
           <Grid size={{ xs: 12, sm: 12, md: 4 }}>
             <Card
