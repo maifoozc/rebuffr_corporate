@@ -939,7 +939,7 @@ const AboutUs = () => {
                   textAlign: "center",
                 }}
               >
-                Sachin Choudhari
+                S. A. Choudhari
               </Typography>
             
               <Box
