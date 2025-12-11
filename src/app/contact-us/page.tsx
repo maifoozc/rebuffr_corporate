@@ -105,7 +105,8 @@ const ContactUs = () => {
                     color: "#444444",
                   }}
                 >
-                  Pune, India
+                  Office No 301, 1, Mont Vert Apex,<br/>
+                  Baner, Pune, Maharashtra 411045
                 </Typography>
               </div>
             </div>
@@ -224,7 +225,7 @@ const ContactUs = () => {
                     color: "#444444",
                   }}
                 >
-                  +91-76876564563
+                  +91-9579388441
                 </Typography>
               </div>
             </div>
@@ -271,7 +272,7 @@ const ContactUs = () => {
             size={{ xs: 12, sm: 12, md: 12 }}
             className="flex justify-center items-center"
           >
-            <div className="flex flex-row  justify-start items-center gap-2">
+            <a className="flex flex-row  justify-start items-center gap-2" href="https://www.linkedin.com/company/rebuffr-systems-private-limited/?viewAsMember=true" target="_blank">
               {/* <Image
                 src={linkedin.src}
                 alt="linkedin"
@@ -305,14 +306,14 @@ const ContactUs = () => {
                   https://www.linkedin.com/company/rebuffr-systems-private-limited/?viewAsMember=true
                 </Typography>
               </div>
-            </div>
+            </a>
           </Grid>
 
           <Grid
             size={{ xs: 12, sm: 12, md: 12 }}
             className="flex flex-col md:flex-row justify-between items-start"
           >
-            <div className="flex flex-row  justify-center items-center gap-2 pb-10">
+            <a className="flex flex-row  justify-center items-center gap-2 pb-10" href='https://rebuffr.com/blog' target='_blank'>
               {/* <Image
                 src={blogs.src}
                 alt="blogs"
@@ -345,8 +346,8 @@ const ContactUs = () => {
                   rebuffr.com/blog
                 </Typography>
               </div>
-            </div>
-            <div className="flex flex-row  justify-center items-center gap-2">
+            </a>
+            <a className="flex flex-row  justify-center items-center gap-2" href='https://rebuffr.com/' target='_blank'>
               {/* <Image
                 src={website.src}
                 alt="website"
@@ -379,7 +380,7 @@ const ContactUs = () => {
                   https://rebuffr.com/
                 </Typography>
               </div>
-            </div>
+            </a>
           </Grid>
         </Grid>
       </div>

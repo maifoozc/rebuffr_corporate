@@ -66,7 +66,9 @@ export default function MapComponent() {
           attribution='&copy; <a href="https://maps.google.com/">Google Maps</a>'
         />
         <Marker position={center} icon={defaultIcon}>
-          <Popup>Your location</Popup>
+          <Popup>
+            <strong>Rebuffr Systems Pvt. Ltd.</strong>
+          </Popup>
         </Marker>
       </MapContainer>
     </div>
